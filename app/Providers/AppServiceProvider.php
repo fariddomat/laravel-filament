@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Support\Facades\Gate;
 
+use BezhanSalleh\LanguageSwitch\LanguageSwitch;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -21,7 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        
+        LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
+            $switch
+                ->locales(['ar','en']); // also accepts a closure
+        });
 
     }
 }

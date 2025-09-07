@@ -1,0 +1,19 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* @config 'tailwind.config.js'; */
+
+
+.fi-main,
+.fi-layout {
+    @apply bg-slate-50 dark:bg-slate-900;
+}
+
+
+.fi-sidebar {
+    @apply bg-white dark:bg-slate-800;
+}
+
+

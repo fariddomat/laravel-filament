@@ -20,6 +20,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
+
 class DashboardPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -56,11 +57,16 @@ class DashboardPanelProvider extends PanelProvider
             ->plugins([
                 FilamentShieldPlugin::make(),
                 SpatieTranslatablePlugin::make()
-                ->defaultLocales(['en', 'ar']),
+                    ->defaultLocales(['en', 'ar']),
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])->viteTheme('resources/css/filament/dashboard/theme.css')
+            ->colors([
+                'primary' => Color::Blue,
             ])
-            ;
+            ->sidebarCollapsibleOnDesktop()
+            ->sidebarWidth('16rem')
+            ->collapsedSidebarWidth('4rem');
     }
 }
