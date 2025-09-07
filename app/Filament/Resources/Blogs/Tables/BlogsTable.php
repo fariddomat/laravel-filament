@@ -16,8 +16,20 @@ class BlogsTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->searchable(),
+                TextColumn::make('name')->searchable()->getStateUsing(function ($record, $livewire) {
+                    $locale = $livewire->activeLocale ?? app()->getLocale();
+                    $translation = $record->getTranslation('name', $locale);
+                    return $translation ?: $record->getTranslation('name', config('app.fallback_locale')) ?: 'N/A';
+                }),
+                TextColumn::make('description')->searchable()->limit(50)
+                    ->tooltip(function ($record) {
+                        return $record->description;
+                    })
+                    ->getStateUsing(function ($record, $livewire) {
+                        $locale = $livewire->activeLocale ?? app()->getLocale();
+                        $translation = $record->getTranslation('description', $locale);
+                        return $translation ?: $record->getTranslation('description', config('app.fallback_locale')) ?: 'N/A';
+                    }),
                 TextColumn::make('publish_date')
                     ->date()
                     ->sortable(),
@@ -44,6 +56,9 @@ class BlogsTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
+            ])->headerActions([
+                // ...
+                // \LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher::make(),
             ]);
     }
 }
