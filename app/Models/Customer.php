@@ -25,6 +25,12 @@ class Customer extends Model
         'employee_id',
     ];
 
+    public function getFullNameAttribute(): string
+    {
+        return $this->first_name . ' ' .
+               $this->last_name;
+    }
+
     public function leadSource(): BelongsTo
     {
         return $this->belongsTo(LeadSource::class);
@@ -88,7 +94,7 @@ class Customer extends Model
     {
         return $this->hasMany(Task::class);
     }
-    
+
     public function completedTasks(): HasMany
     {
         return $this->hasMany(Task::class)->where('is_completed', true);

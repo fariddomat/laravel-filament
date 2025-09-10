@@ -23,7 +23,7 @@ class PipelineStageResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::CircleStack;
 
-    protected static ?string $recordTitleAttribute = 'Pipeline Stage';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
     {
