@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\CustomersByStageWidget;
+use App\Filament\Widgets\StatsOverviewWidget;
 use Filament\Http\Middleware\Authenticate;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -41,6 +43,8 @@ class DashboardPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
+                StatsOverviewWidget::class,
+                CustomersByStageWidget::class,
                 // FilamentInfoWidget::class,
             ])
             ->middleware([
@@ -58,13 +62,11 @@ class DashboardPanelProvider extends PanelProvider
                 FilamentShieldPlugin::make(),
                 SpatieTranslatablePlugin::make()
                     ->defaultLocales(['en', 'ar']),
+
             ])
             ->authMiddleware([
                 Authenticate::class,
             ])->viteTheme('resources/css/filament/dashboard/theme.css')
-            ->colors([
-                'primary' => Color::Blue,
-            ])
             ->sidebarCollapsibleOnDesktop()
             ->sidebarWidth('16rem')
             ->collapsedSidebarWidth('4rem');
