@@ -1,0 +1,316 @@
+Models:
+- \app/Models\Blog.php
+- \app/Models\CustomField.php
+- \app/Models\CustomFieldCustomer.php
+- \app/Models\Customer.php
+- \app/Models\CustomerPipelineStage.php
+- \app/Models\Document.php
+- \app/Models\Invitation.php
+- \app/Models\LeadSource.php
+- \app/Models\PipelineStage.php
+- \app/Models\Product.php
+- \app/Models\ProductQuote.php
+- \app/Models\Quote.php
+- \app/Models\Tag.php
+- \app/Models\Task.php
+- \app/Models\User.php
+
+Filament:
+- \app/Filament\Pages
+  - \app/Filament\Pages\ManageCustomerStages.php
+- \app/Filament\Resources
+  - \app/Filament\Resources\Blogs
+    - \app/Filament\Resources\Blogs\Pages
+      - \app/Filament\Resources\Blogs\Pages\CreateBlog.php
+      - \app/Filament\Resources\Blogs\Pages\EditBlog.php
+      - \app/Filament\Resources\Blogs\Pages\ListBlogs.php
+    - \app/Filament\Resources\Blogs\Schemas
+      - \app/Filament\Resources\Blogs\Schemas\BlogForm.php
+    - \app/Filament\Resources\Blogs\Tables
+      - \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+    - \app/Filament\Resources\Blogs\BlogResource.php
+    - \app/Filament\Resources\Blogs\Pages\CreateBlog.php
+    - \app/Filament\Resources\Blogs\Pages\EditBlog.php
+    - \app/Filament\Resources\Blogs\Pages\ListBlogs.php
+    - \app/Filament\Resources\Blogs\Schemas\BlogForm.php
+    - \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+  - \app/Filament\Resources\CustomFields
+    - \app/Filament\Resources\CustomFields\Pages
+      - \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
+      - \app/Filament\Resources\CustomFields\Pages\EditCustomField.php
+      - \app/Filament\Resources\CustomFields\Pages\ListCustomFields.php
+    - \app/Filament\Resources\CustomFields\Schemas
+      - \app/Filament\Resources\CustomFields\Schemas\CustomFieldForm.php
+    - \app/Filament\Resources\CustomFields\Tables
+      - \app/Filament\Resources\CustomFields\Tables\CustomFieldsTable.php
+    - \app/Filament\Resources\CustomFields\CustomFieldResource.php
+    - \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
+    - \app/Filament\Resources\CustomFields\Pages\EditCustomField.php
+    - \app/Filament\Resources\CustomFields\Pages\ListCustomFields.php
+    - \app/Filament\Resources\CustomFields\Schemas\CustomFieldForm.php
+    - \app/Filament\Resources\CustomFields\Tables\CustomFieldsTable.php
+  - \app/Filament\Resources\Customers
+    - \app/Filament\Resources\Customers\Pages
+      - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
+      - \app/Filament\Resources\Customers\Pages\EditCustomer.php
+      - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+    - \app/Filament\Resources\Customers\Schemas
+      - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
+    - \app/Filament\Resources\Customers\Tables
+      - \app/Filament\Resources\Customers\Tables\CustomersTable.php
+    - \app/Filament\Resources\Customers\CustomerResource.php
+    - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
+    - \app/Filament\Resources\Customers\Pages\EditCustomer.php
+    - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+    - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
+    - \app/Filament\Resources\Customers\Tables\CustomersTable.php
+  - \app/Filament\Resources\LeadSources
+    - \app/Filament\Resources\LeadSources\Pages
+      - \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
+      - \app/Filament\Resources\LeadSources\Pages\EditLeadSource.php
+      - \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
+    - \app/Filament\Resources\LeadSources\Schemas
+      - \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
+    - \app/Filament\Resources\LeadSources\Tables
+      - \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+    - \app/Filament\Resources\LeadSources\LeadSourceResource.php
+    - \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
+    - \app/Filament\Resources\LeadSources\Pages\EditLeadSource.php
+    - \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
+    - \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
+    - \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+  - \app/Filament\Resources\PipelineStages
+    - \app/Filament\Resources\PipelineStages\Pages
+      - \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
+      - \app/Filament\Resources\PipelineStages\Pages\EditPipelineStage.php
+      - \app/Filament\Resources\PipelineStages\Pages\ListPipelineStages.php
+    - \app/Filament\Resources\PipelineStages\Schemas
+      - \app/Filament\Resources\PipelineStages\Schemas\PipelineStageForm.php
+    - \app/Filament\Resources\PipelineStages\Tables
+      - \app/Filament\Resources\PipelineStages\Tables\PipelineStagesTable.php
+    - \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
+    - \app/Filament\Resources\PipelineStages\Pages\EditPipelineStage.php
+    - \app/Filament\Resources\PipelineStages\Pages\ListPipelineStages.php
+    - \app/Filament\Resources\PipelineStages\PipelineStageResource.php
+    - \app/Filament\Resources\PipelineStages\Schemas\PipelineStageForm.php
+    - \app/Filament\Resources\PipelineStages\Tables\PipelineStagesTable.php
+  - \app/Filament\Resources\Products
+    - \app/Filament\Resources\Products\Pages
+      - \app/Filament\Resources\Products\Pages\CreateProduct.php
+      - \app/Filament\Resources\Products\Pages\EditProduct.php
+      - \app/Filament\Resources\Products\Pages\ListProducts.php
+    - \app/Filament\Resources\Products\Schemas
+      - \app/Filament\Resources\Products\Schemas\ProductForm.php
+    - \app/Filament\Resources\Products\Tables
+      - \app/Filament\Resources\Products\Tables\ProductsTable.php
+    - \app/Filament\Resources\Products\Pages\CreateProduct.php
+    - \app/Filament\Resources\Products\Pages\EditProduct.php
+    - \app/Filament\Resources\Products\Pages\ListProducts.php
+    - \app/Filament\Resources\Products\ProductResource.php
+    - \app/Filament\Resources\Products\Schemas\ProductForm.php
+    - \app/Filament\Resources\Products\Tables\ProductsTable.php
+  - \app/Filament\Resources\Quotes
+    - \app/Filament\Resources\Quotes\Pages
+      - \app/Filament\Resources\Quotes\Pages\CreateQuote.php
+      - \app/Filament\Resources\Quotes\Pages\EditQuote.php
+      - \app/Filament\Resources\Quotes\Pages\ListQuotes.php
+      - \app/Filament\Resources\Quotes\Pages\ViewQuote.php
+    - \app/Filament\Resources\Quotes\Schemas
+      - \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
+    - \app/Filament\Resources\Quotes\Tables
+      - \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+    - \app/Filament\Resources\Quotes\Pages\CreateQuote.php
+    - \app/Filament\Resources\Quotes\Pages\EditQuote.php
+    - \app/Filament\Resources\Quotes\Pages\ListQuotes.php
+    - \app/Filament\Resources\Quotes\Pages\ViewQuote.php
+    - \app/Filament\Resources\Quotes\QuoteResource.php
+    - \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
+    - \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+  - \app/Filament\Resources\Tags
+    - \app/Filament\Resources\Tags\Pages
+      - \app/Filament\Resources\Tags\Pages\CreateTag.php
+      - \app/Filament\Resources\Tags\Pages\EditTag.php
+      - \app/Filament\Resources\Tags\Pages\ListTags.php
+    - \app/Filament\Resources\Tags\Schemas
+      - \app/Filament\Resources\Tags\Schemas\TagForm.php
+    - \app/Filament\Resources\Tags\Tables
+      - \app/Filament\Resources\Tags\Tables\TagsTable.php
+    - \app/Filament\Resources\Tags\Pages\CreateTag.php
+    - \app/Filament\Resources\Tags\Pages\EditTag.php
+    - \app/Filament\Resources\Tags\Pages\ListTags.php
+    - \app/Filament\Resources\Tags\Schemas\TagForm.php
+    - \app/Filament\Resources\Tags\Tables\TagsTable.php
+    - \app/Filament\Resources\Tags\TagResource.php
+  - \app/Filament\Resources\Tasks
+    - \app/Filament\Resources\Tasks\Pages
+      - \app/Filament\Resources\Tasks\Pages\CreateTask.php
+      - \app/Filament\Resources\Tasks\Pages\EditTask.php
+      - \app/Filament\Resources\Tasks\Pages\ListTasks.php
+    - \app/Filament\Resources\Tasks\Schemas
+      - \app/Filament\Resources\Tasks\Schemas\TaskForm.php
+    - \app/Filament\Resources\Tasks\Tables
+      - \app/Filament\Resources\Tasks\Tables\TasksTable.php
+    - \app/Filament\Resources\Tasks\Pages\CreateTask.php
+    - \app/Filament\Resources\Tasks\Pages\EditTask.php
+    - \app/Filament\Resources\Tasks\Pages\ListTasks.php
+    - \app/Filament\Resources\Tasks\Schemas\TaskForm.php
+    - \app/Filament\Resources\Tasks\Tables\TasksTable.php
+    - \app/Filament\Resources\Tasks\TaskResource.php
+  - \app/Filament\Resources\Users
+    - \app/Filament\Resources\Users\Pages
+      - \app/Filament\Resources\Users\Pages\CreateUser.php
+      - \app/Filament\Resources\Users\Pages\EditUser.php
+      - \app/Filament\Resources\Users\Pages\ListUsers.php
+    - \app/Filament\Resources\Users\Schemas
+      - \app/Filament\Resources\Users\Schemas\UserForm.php
+    - \app/Filament\Resources\Users\Tables
+      - \app/Filament\Resources\Users\Tables\UsersTable.php
+    - \app/Filament\Resources\Users\Pages\CreateUser.php
+    - \app/Filament\Resources\Users\Pages\EditUser.php
+    - \app/Filament\Resources\Users\Pages\ListUsers.php
+    - \app/Filament\Resources\Users\Schemas\UserForm.php
+    - \app/Filament\Resources\Users\Tables\UsersTable.php
+    - \app/Filament\Resources\Users\UserResource.php
+  - \app/Filament\Resources\Blogs\BlogResource.php
+  - \app/Filament\Resources\Blogs\Pages\CreateBlog.php
+  - \app/Filament\Resources\Blogs\Pages\EditBlog.php
+  - \app/Filament\Resources\Blogs\Pages\ListBlogs.php
+  - \app/Filament\Resources\Blogs\Schemas\BlogForm.php
+  - \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+  - \app/Filament\Resources\CustomFields\CustomFieldResource.php
+  - \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
+  - \app/Filament\Resources\CustomFields\Pages\EditCustomField.php
+  - \app/Filament\Resources\CustomFields\Pages\ListCustomFields.php
+  - \app/Filament\Resources\CustomFields\Schemas\CustomFieldForm.php
+  - \app/Filament\Resources\CustomFields\Tables\CustomFieldsTable.php
+  - \app/Filament\Resources\Customers\CustomerResource.php
+  - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
+  - \app/Filament\Resources\Customers\Pages\EditCustomer.php
+  - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+  - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
+  - \app/Filament\Resources\Customers\Tables\CustomersTable.php
+  - \app/Filament\Resources\LeadSources\LeadSourceResource.php
+  - \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
+  - \app/Filament\Resources\LeadSources\Pages\EditLeadSource.php
+  - \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
+  - \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
+  - \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+  - \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
+  - \app/Filament\Resources\PipelineStages\Pages\EditPipelineStage.php
+  - \app/Filament\Resources\PipelineStages\Pages\ListPipelineStages.php
+  - \app/Filament\Resources\PipelineStages\PipelineStageResource.php
+  - \app/Filament\Resources\PipelineStages\Schemas\PipelineStageForm.php
+  - \app/Filament\Resources\PipelineStages\Tables\PipelineStagesTable.php
+  - \app/Filament\Resources\Products\Pages\CreateProduct.php
+  - \app/Filament\Resources\Products\Pages\EditProduct.php
+  - \app/Filament\Resources\Products\Pages\ListProducts.php
+  - \app/Filament\Resources\Products\ProductResource.php
+  - \app/Filament\Resources\Products\Schemas\ProductForm.php
+  - \app/Filament\Resources\Products\Tables\ProductsTable.php
+  - \app/Filament\Resources\Quotes\Pages\CreateQuote.php
+  - \app/Filament\Resources\Quotes\Pages\EditQuote.php
+  - \app/Filament\Resources\Quotes\Pages\ListQuotes.php
+  - \app/Filament\Resources\Quotes\Pages\ViewQuote.php
+  - \app/Filament\Resources\Quotes\QuoteResource.php
+  - \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
+  - \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+  - \app/Filament\Resources\Tags\Pages\CreateTag.php
+  - \app/Filament\Resources\Tags\Pages\EditTag.php
+  - \app/Filament\Resources\Tags\Pages\ListTags.php
+  - \app/Filament\Resources\Tags\Schemas\TagForm.php
+  - \app/Filament\Resources\Tags\Tables\TagsTable.php
+  - \app/Filament\Resources\Tags\TagResource.php
+  - \app/Filament\Resources\Tasks\Pages\CreateTask.php
+  - \app/Filament\Resources\Tasks\Pages\EditTask.php
+  - \app/Filament\Resources\Tasks\Pages\ListTasks.php
+  - \app/Filament\Resources\Tasks\Schemas\TaskForm.php
+  - \app/Filament\Resources\Tasks\Tables\TasksTable.php
+  - \app/Filament\Resources\Tasks\TaskResource.php
+  - \app/Filament\Resources\Users\Pages\CreateUser.php
+  - \app/Filament\Resources\Users\Pages\EditUser.php
+  - \app/Filament\Resources\Users\Pages\ListUsers.php
+  - \app/Filament\Resources\Users\Schemas\UserForm.php
+  - \app/Filament\Resources\Users\Tables\UsersTable.php
+  - \app/Filament\Resources\Users\UserResource.php
+- \app/Filament\Widgets
+  - \app/Filament\Widgets\CustomersByStageWidget.php
+  - \app/Filament\Widgets\StatsOverviewWidget.php
+- \app/Filament\Pages\ManageCustomerStages.php
+- \app/Filament\Resources\Blogs\BlogResource.php
+- \app/Filament\Resources\Blogs\Pages\CreateBlog.php
+- \app/Filament\Resources\Blogs\Pages\EditBlog.php
+- \app/Filament\Resources\Blogs\Pages\ListBlogs.php
+- \app/Filament\Resources\Blogs\Schemas\BlogForm.php
+- \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+- \app/Filament\Resources\CustomFields\CustomFieldResource.php
+- \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
+- \app/Filament\Resources\CustomFields\Pages\EditCustomField.php
+- \app/Filament\Resources\CustomFields\Pages\ListCustomFields.php
+- \app/Filament\Resources\CustomFields\Schemas\CustomFieldForm.php
+- \app/Filament\Resources\CustomFields\Tables\CustomFieldsTable.php
+- \app/Filament\Resources\Customers\CustomerResource.php
+- \app/Filament\Resources\Customers\Pages\CreateCustomer.php
+- \app/Filament\Resources\Customers\Pages\EditCustomer.php
+- \app/Filament\Resources\Customers\Pages\ListCustomers.php
+- \app/Filament\Resources\Customers\Schemas\CustomerForm.php
+- \app/Filament\Resources\Customers\Tables\CustomersTable.php
+- \app/Filament\Resources\LeadSources\LeadSourceResource.php
+- \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
+- \app/Filament\Resources\LeadSources\Pages\EditLeadSource.php
+- \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
+- \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
+- \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+- \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
+- \app/Filament\Resources\PipelineStages\Pages\EditPipelineStage.php
+- \app/Filament\Resources\PipelineStages\Pages\ListPipelineStages.php
+- \app/Filament\Resources\PipelineStages\PipelineStageResource.php
+- \app/Filament\Resources\PipelineStages\Schemas\PipelineStageForm.php
+- \app/Filament\Resources\PipelineStages\Tables\PipelineStagesTable.php
+- \app/Filament\Resources\Products\Pages\CreateProduct.php
+- \app/Filament\Resources\Products\Pages\EditProduct.php
+- \app/Filament\Resources\Products\Pages\ListProducts.php
+- \app/Filament\Resources\Products\ProductResource.php
+- \app/Filament\Resources\Products\Schemas\ProductForm.php
+- \app/Filament\Resources\Products\Tables\ProductsTable.php
+- \app/Filament\Resources\Quotes\Pages\CreateQuote.php
+- \app/Filament\Resources\Quotes\Pages\EditQuote.php
+- \app/Filament\Resources\Quotes\Pages\ListQuotes.php
+- \app/Filament\Resources\Quotes\Pages\ViewQuote.php
+- \app/Filament\Resources\Quotes\QuoteResource.php
+- \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
+- \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+- \app/Filament\Resources\Tags\Pages\CreateTag.php
+- \app/Filament\Resources\Tags\Pages\EditTag.php
+- \app/Filament\Resources\Tags\Pages\ListTags.php
+- \app/Filament\Resources\Tags\Schemas\TagForm.php
+- \app/Filament\Resources\Tags\Tables\TagsTable.php
+- \app/Filament\Resources\Tags\TagResource.php
+- \app/Filament\Resources\Tasks\Pages\CreateTask.php
+- \app/Filament\Resources\Tasks\Pages\EditTask.php
+- \app/Filament\Resources\Tasks\Pages\ListTasks.php
+- \app/Filament\Resources\Tasks\Schemas\TaskForm.php
+- \app/Filament\Resources\Tasks\Tables\TasksTable.php
+- \app/Filament\Resources\Tasks\TaskResource.php
+- \app/Filament\Resources\Users\Pages\CreateUser.php
+- \app/Filament\Resources\Users\Pages\EditUser.php
+- \app/Filament\Resources\Users\Pages\ListUsers.php
+- \app/Filament\Resources\Users\Schemas\UserForm.php
+- \app/Filament\Resources\Users\Tables\UsersTable.php
+- \app/Filament\Resources\Users\UserResource.php
+- \app/Filament\Widgets\CustomersByStageWidget.php
+- \app/Filament\Widgets\StatsOverviewWidget.php
+
+Blade Views:
+- \resources/views/filament\pages
+  - \resources/views/filament\pages\manage-customer-stages.blade.php
+  - \resources/views/filament\pages\task-calendar.blade.php
+- \resources/views/filament\pages\manage-customer-stages.blade.php
+- \resources/views/filament\pages\task-calendar.blade.php
+
+
+Panel Provider:
+- \app/Providers/Filament\DashboardPanelProvider.php
+
+Custom CSS:
+- \resources/css/filament/dashboard\theme.css
+

@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Quotes;
 
-use App\Filament\Resources\QuoteResource\Pages\ViewQuote;
+use App\Filament\Resources\Quotes\Pages\ViewQuote;
 use App\Filament\Resources\Quotes\Pages\CreateQuote;
 use App\Filament\Resources\Quotes\Pages\EditQuote;
 use App\Filament\Resources\Quotes\Pages\ListQuotes;

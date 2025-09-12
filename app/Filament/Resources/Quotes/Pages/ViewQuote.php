@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Filament\Resources\QuoteResource\Pages;
+// namespace App\Filament\Resources\QuoteResource\Pages;
+namespace App\Filament\Resources\Quotes\Pages;
 
 use App\Filament\Resources\Quotes\Pages\EditQuote;
 use App\Filament\Resources\Quotes\QuoteResource;
