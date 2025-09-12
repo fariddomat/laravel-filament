@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Facades\Storage;
 
 class Document extends Model
@@ -13,20 +12,21 @@ class Document extends Model
     use HasFactory;
 
     protected $fillable = [
-        'customer_id',
+        'documentable_id',
+        'documentable_type',
         'file_path',
         'comments'
     ];
 
     protected static function booted(): void
     {
-        self::deleting(function (Document $customerDocument) {
-            Storage::disk('public')->delete($customerDocument->file_path);
+        self::deleting(function (Document $document) {
+            Storage::disk('public')->delete($document->file_path);
         });
     }
 
-    public function customer(): BelongsTo
+    public function documentable(): MorphTo
     {
-        return $this->belongsTo(Customer::class);
+        return $this->morphTo();
     }
 }

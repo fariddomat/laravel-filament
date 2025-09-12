@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Customer::class)->constrained();
+            $table->morphs('documentable');
             $table->string('file_path');
             $table->text('comments')->nullable();
             $table->timestamps();

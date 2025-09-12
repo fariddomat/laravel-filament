@@ -59,4 +59,10 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'documentable');
+    }
 }

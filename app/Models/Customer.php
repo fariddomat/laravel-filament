@@ -75,10 +75,11 @@ class Customer extends Model
         });
     }
 
-    public function documents(): HasMany
+      public function documents()
     {
-        return $this->hasMany(Document::class);
+        return $this->morphMany(Document::class, 'documentable');
     }
+
 
     public function customFields(): HasMany
     {
