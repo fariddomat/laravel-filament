@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Customer;
+use App\Models\Project;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -20,6 +21,8 @@ return new class extends Migration
             $table->text('description');
             $table->date('due_date')->nullable();
             $table->boolean('is_completed')->default(false);
+
+            $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

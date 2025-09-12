@@ -104,4 +104,9 @@ class Customer extends Model
     {
         return $this->hasMany(Task::class)->where('is_completed', false);
     }
+
+     public function projects()
+    {
+        return $this->hasMany(Project::class, 'customer_id');
+    }
 }

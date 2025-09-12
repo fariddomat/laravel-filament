@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+
+class Project extends Model
+{
+    use Notifiable, SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'customer_id',
+        'description',
+        'start_date',
+        'deadline',
+        'budget',
+        'total_billed',
+        'created_by',
+        'status_id',
+        'billing_type',
+        'hourly_rate',
+        'is_visible_to_client',
+        'allow_client_comments',
+        'custom_fields',
+    ];
+
+    protected $casts = [
+        'start_date' => 'date',
+        'deadline' => 'date',
+        'custom_fields' => 'array',
+        'is_visible_to_client' => 'boolean',
+        'allow_client_comments' => 'boolean',
+    ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'status_id');
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function members()
+    {
+        return $this->belongsToMany(User::class, 'project_user')->withPivot('role')->withTimestamps();
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+}
