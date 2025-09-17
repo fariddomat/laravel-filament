@@ -65,4 +65,25 @@ class Project extends Model
     {
         return $this->morphMany(Document::class, 'documentable');
     }
+
+        public function milestones()
+    {
+        return $this->hasMany(Milestone::class);
+    }
+
+
+    public function timesheets()
+    {
+        return $this->hasMany(Timesheet::class);
+    }
+
+        public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

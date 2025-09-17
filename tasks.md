@@ -1,7 +1,7 @@
 To integrate the `Project` model into your CRM project (replacing `Client` with `Customer`), here’s what needs to be updated or added based on your existing schema and the provided model:
 
-1. Create `projects` table migration
-2. Create `statuses` table migration (for `Status` model)
+1. Create `projects` table migration #
+2. Create `statuses` table migration (for `Status` model) #
 3. Create `milestones` table migration (for `Milestone` model)
 4. Create `project_user` pivot table migration (for `members` relationship)
 5. Create `timesheets` table migration (for `Timesheet` model)
@@ -63,3 +63,62 @@ To integrate the `Project` model into your CRM project (replacing `Client` with 
 - **Seeding/Migrations**: Create migration for all new tables/pivots, seed initial statuses (e.g., 'In Progress', 'Completed'); update existing task migration if adding project_id retroactively.
 
 - **Potential Conflicts**: Review `tasks` table (add nullable `project_id`); ensure no clashes with existing `customer_pipeline_stages` or `quotes` for project billing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create milestones table migration
+Create timesheets table migration
+Create invoices table migration
+Use existing documents table for files (already polymorphic)
+Create tickets table migration (or reuse tasks if tickets are tasks)
+Create notes table migration (polymorphic for noteable)
+Create discussions table migration
+Create activity_logs table migration (polymorphic for loggable)
+Create contracts table migration
+Create sales table migration
+Create customer_feedback table migration
+Create Milestone model with belongsTo(Project::class)
+Create Timesheet model with belongsTo(Project::class)
+Create Invoice model with belongsTo(Project::class)
+Create Ticket model with belongsTo(Project::class) (or update Task model if reusing)
+Create Note model with morphTo for noteable
+Create Discussion model with belongsTo(Project::class)
+Create ActivityLog model with morphTo for loggable
+Create Contract model with belongsTo(Project::class)
+Create Sale model with belongsTo(Project::class)
+Create CustomerFeedback model with belongsTo(Project::class)
+Update Project model to add hasMany for milestones, timesheets, invoices, tickets (or reuse tasks), discussions, contracts, sales, feedback, and morphMany for notes, activities
+Update Customer model to add hasMany for invoices, contracts, sales, feedback if they relate to customers too
+Create Filament resources for new models (e.g., MilestoneResource, TimesheetResource, etc.)
+Add relation managers to ProjectResource for managing milestones, timesheets, invoices, tickets, notes, discussions, activities, contracts, sales, feedback
+Configure bezhansalleh/filament-shield permissions for new resources
+Create factories/seeders for new models for testing
+Update ProjectForm schema to include fields for new relationships (if needed)
+Ensure polymorphic relationships (notes, activities) are properly constrained
+Validate Laravel 12 compatibility for new migrations and models
+Run migrations and test relationships in Filament UI
+Optionally, add tabs to ListProjects for filtering by new relations (e.g., invoices by status)

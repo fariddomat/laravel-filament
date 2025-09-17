@@ -51,6 +51,11 @@ class Customer extends Model
         return $this->hasMany(CustomerPipelineStage::class);
     }
 
+    public function quotes(): HasMany
+    {
+        return $this->hasMany(Quote::class);
+    }
+
     public static function booted(): void
     {
         self::created(function (Customer $customer) {
@@ -109,5 +114,15 @@ class Customer extends Model
      public function projects()
     {
         return $this->hasMany(Project::class, 'customer_id');
+    }
+
+     public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
     }
 }
