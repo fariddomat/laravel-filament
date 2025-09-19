@@ -56,6 +56,12 @@ class Customer extends Model
         return $this->hasMany(Quote::class);
     }
 
+    public function notes()
+    {
+                return $this->morphMany(Note::class, 'noteable');
+
+    }
+
     public static function booted(): void
     {
         self::created(function (Customer $customer) {

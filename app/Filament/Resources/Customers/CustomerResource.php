@@ -7,6 +7,7 @@ use App\Filament\Resources\Customers\Pages\EditCustomer;
 use App\Filament\Resources\Customers\Pages\ListCustomers;
 use App\Filament\Resources\Customers\RelationManagers\DocumentsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\InvoicesRelationManager;
+use App\Filament\Resources\Customers\RelationManagers\NotesRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\PaymentsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\PipelineStagesRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\ProjectsRelationManager;
@@ -58,6 +59,7 @@ class CustomerResource extends Resource
             ProjectsRelationManager::class,
             InvoicesRelationManager::class,
             PaymentsRelationManager::class,
+            NotesRelationManager::class,
         ];
     }
 

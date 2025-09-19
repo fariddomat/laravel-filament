@@ -9,6 +9,7 @@ use App\Filament\Resources\Projects\Pages\EditProject;
 use App\Filament\Resources\Projects\Pages\ListProjects;
 use App\Filament\Resources\Projects\Pages\ViewProject;
 use App\Filament\Resources\Projects\RelationManagers\InvoicesRelationManager;
+use App\Filament\Resources\Projects\RelationManagers\NotesRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\TasksRelationManager;
 use App\Filament\Resources\Projects\Schemas\ProjectForm;
@@ -48,6 +49,8 @@ class ProjectResource extends Resource
             InvoicesRelationManager::class,
 
             TasksRelationManager::class,
+
+            NotesRelationManager::class,
         ];
     }
 

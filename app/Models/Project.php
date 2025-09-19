@@ -86,4 +86,10 @@ class Project extends Model
     {
         return $this->hasMany(Payment::class);
     }
+
+    public function notes()
+    {
+                return $this->morphMany(Note::class, 'noteable');
+
+    }
 }
