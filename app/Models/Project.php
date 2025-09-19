@@ -106,4 +106,9 @@ class Project extends Model
     {
         return $this->hasManyThrough(TicketReply::class, Ticket::class);
     }
+
+    public function discussions()
+    {
+        return $this->hasMany(Discussion::class);
+    }
 }

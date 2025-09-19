@@ -9,6 +9,7 @@ use App\Filament\Resources\Projects\Pages\EditProject;
 use App\Filament\Resources\Projects\Pages\ListProjects;
 use App\Filament\Resources\Projects\Pages\ViewProject;
 use App\Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager;
+use App\Filament\Resources\Projects\RelationManagers\DiscussionsRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\InvoicesRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\NotesRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager;
@@ -46,20 +47,15 @@ class ProjectResource extends Resource
     {
         return [
             MilestonesRelationManager::class,
-
             TimesheetsRelationManager::class,
-
             InvoicesRelationManager::class,
-
             TasksRelationManager::class,
-
             NotesRelationManager::class,
-
             TicketsRelationManager::class,
-
             // CustomerFeedbackRelationManager::class,
-
             // TicketRepliesRelationManager::class,
+            DiscussionsRelationManager::class,
+
         ];
     }
 

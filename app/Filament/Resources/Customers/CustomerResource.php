@@ -6,6 +6,7 @@ use App\Filament\Resources\Customers\Pages\CreateCustomer;
 use App\Filament\Resources\Customers\Pages\EditCustomer;
 use App\Filament\Resources\Customers\Pages\ListCustomers;
 use App\Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager;
+use App\Filament\Resources\Customers\RelationManagers\DiscussionsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\DocumentsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\InvoicesRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\NotesRelationManager;
@@ -66,6 +67,7 @@ class CustomerResource extends Resource
             TicketsRelationManager::class,
             // CustomerFeedbackRelationManager::class,
             // TicketRepliesRelationManager::class,
+            DiscussionsRelationManager::class,
         ];
     }
 

@@ -94,23 +94,23 @@ To integrate the `Project` model into your CRM project (replacing `Client` with 
     Create timesheets table migration
     Create invoices table migration
     Use existing documents table for files (already polymorphic)
-Create tickets table migration (or reuse tasks if tickets are tasks)
+    Create tickets table migration (or reuse tasks if tickets are tasks)
     Create notes table migration (polymorphic for noteable)
 Create discussions table migration
 Create activity_logs table migration (polymorphic for loggable)
 Create contracts table migration
 Create sales table migration
-Create customer_feedback table migration
+    Create customer_feedback table migration
     Create Milestone model with belongsTo(Project::class)
     Create Timesheet model with belongsTo(Project::class)
     Create Invoice model with belongsTo(Project::class)
-Create Ticket model with belongsTo(Project::class) (or update Task model if reusing)
+    Create Ticket model with belongsTo(Project::class) (or update Task model if reusing)
     Create Note model with morphTo for noteable
 Create Discussion model with belongsTo(Project::class)
 Create ActivityLog model with morphTo for loggable
 Create Contract model with belongsTo(Project::class)
 Create Sale model with belongsTo(Project::class)
-Create CustomerFeedback model with belongsTo(Project::class)
+    Create CustomerFeedback model with belongsTo(Project::class)
 Update Project model to add hasMany for milestones, timesheets, invoices, tickets (or reuse tasks), discussions, contracts, sales, feedback, and morphMany for notes, activities
 Update Customer model to add hasMany for invoices, contracts, sales, feedback if they relate to customers too
 Create Filament resources for new models (e.g., MilestoneResource, TimesheetResource, etc.)
