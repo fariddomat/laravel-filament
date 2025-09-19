@@ -150,4 +150,9 @@ class Customer extends Model
     {
         return $this->hasMany(Discussion::class);
     }
+
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
+    }
 }

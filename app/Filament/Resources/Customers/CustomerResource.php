@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Customers;
 use App\Filament\Resources\Customers\Pages\CreateCustomer;
 use App\Filament\Resources\Customers\Pages\EditCustomer;
 use App\Filament\Resources\Customers\Pages\ListCustomers;
+use App\Filament\Resources\Customers\RelationManagers\ContractsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\DiscussionsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\DocumentsRelationManager;
@@ -68,6 +69,7 @@ class CustomerResource extends Resource
             // CustomerFeedbackRelationManager::class,
             // TicketRepliesRelationManager::class,
             DiscussionsRelationManager::class,
+            ContractsRelationManager::class,
         ];
     }
 

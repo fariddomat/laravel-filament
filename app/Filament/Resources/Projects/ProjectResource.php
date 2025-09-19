@@ -8,6 +8,7 @@ use App\Filament\Resources\Projects\Pages\CreateProject;
 use App\Filament\Resources\Projects\Pages\EditProject;
 use App\Filament\Resources\Projects\Pages\ListProjects;
 use App\Filament\Resources\Projects\Pages\ViewProject;
+use App\Filament\Resources\Projects\RelationManagers\ContractsRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\DiscussionsRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\InvoicesRelationManager;
@@ -55,7 +56,7 @@ class ProjectResource extends Resource
             // CustomerFeedbackRelationManager::class,
             // TicketRepliesRelationManager::class,
             DiscussionsRelationManager::class,
-
+            ContractsRelationManager::class,
         ];
     }
 

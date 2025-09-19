@@ -1,37 +1,26 @@
 <?php
 
-namespace App\Filament\Resources\Quotes\Tables;
+namespace App\Filament\Resources\ContractTemplates\Tables;
 
-use App\Filament\Resources\Quotes\Pages\ViewQuote;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreBulkAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 
-class QuotesTable
+class ContractTemplatesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('customer.first_name')
-                    ->formatStateUsing(function ($record) {
-                        return $record->customer->first_name . ' ' . $record->customer->last_name;
-                    })
-                    ->searchable(['first_name', 'last_name'])
-                    ->sortable(),
-                TextColumn::make('taxes')
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('created_by')
                     ->numeric()
-                    ->suffix('%')
-                    ->sortable(),
-                TextColumn::make('subtotal')
-                    ->numeric()
-                    ->money()
-                    ->sortable(),
-                TextColumn::make('total')
-                    ->numeric()
-                    ->money()
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -41,9 +30,13 @@ class QuotesTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                TrashedFilter::make(),
             ])
             ->recordActions([
                 EditAction::make(),
@@ -51,10 +44,9 @@ class QuotesTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ForceDeleteBulkAction::make(),
+                    RestoreBulkAction::make(),
                 ]),
-            ])
-            ->recordUrl(function ($record) {
-                return ViewQuote::getUrl([$record]);
-            });
+            ]);
     }
 }

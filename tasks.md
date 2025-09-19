@@ -96,7 +96,7 @@ To integrate the `Project` model into your CRM project (replacing `Client` with 
     Use existing documents table for files (already polymorphic)
     Create tickets table migration (or reuse tasks if tickets are tasks)
     Create notes table migration (polymorphic for noteable)
-Create discussions table migration
+    Create discussions table migration
 Create activity_logs table migration (polymorphic for loggable)
 Create contracts table migration
 Create sales table migration
@@ -106,7 +106,7 @@ Create sales table migration
     Create Invoice model with belongsTo(Project::class)
     Create Ticket model with belongsTo(Project::class) (or update Task model if reusing)
     Create Note model with morphTo for noteable
-Create Discussion model with belongsTo(Project::class)
+    Create Discussion model with belongsTo(Project::class)
 Create ActivityLog model with morphTo for loggable
 Create Contract model with belongsTo(Project::class)
 Create Sale model with belongsTo(Project::class)
