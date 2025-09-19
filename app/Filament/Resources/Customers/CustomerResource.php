@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Customers;
 use App\Filament\Resources\Customers\Pages\CreateCustomer;
 use App\Filament\Resources\Customers\Pages\EditCustomer;
 use App\Filament\Resources\Customers\Pages\ListCustomers;
+use App\Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\DocumentsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\InvoicesRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\NotesRelationManager;
@@ -14,6 +15,8 @@ use App\Filament\Resources\Customers\RelationManagers\ProjectsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\QuotesRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\TagsRelationManager;
 use App\Filament\Resources\Customers\RelationManagers\TasksRelationManager;
+use App\Filament\Resources\Customers\RelationManagers\TicketRepliesRelationManager;
+use App\Filament\Resources\Customers\RelationManagers\TicketsRelationManager;
 use App\Filament\Resources\Customers\Schemas\CustomerForm;
 use App\Filament\Resources\Customers\Tables\CustomersTable;
 use App\Models\Customer;
@@ -60,6 +63,9 @@ class CustomerResource extends Resource
             InvoicesRelationManager::class,
             PaymentsRelationManager::class,
             NotesRelationManager::class,
+            TicketsRelationManager::class,
+            // CustomerFeedbackRelationManager::class,
+            // TicketRepliesRelationManager::class,
         ];
     }
 

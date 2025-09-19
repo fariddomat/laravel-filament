@@ -28,7 +28,7 @@ class Customer extends Model
     public function getFullNameAttribute(): string
     {
         return $this->first_name . ' ' .
-               $this->last_name;
+            $this->last_name;
     }
 
     public function leadSource(): BelongsTo
@@ -58,8 +58,7 @@ class Customer extends Model
 
     public function notes()
     {
-                return $this->morphMany(Note::class, 'noteable');
-
+        return $this->morphMany(Note::class, 'noteable');
     }
 
     public static function booted(): void
@@ -86,7 +85,7 @@ class Customer extends Model
         });
     }
 
-      public function documents()
+    public function documents()
     {
         return $this->morphMany(Document::class, 'documentable');
     }
@@ -117,12 +116,12 @@ class Customer extends Model
         return $this->hasMany(Task::class)->where('is_completed', false);
     }
 
-     public function projects()
+    public function projects()
     {
         return $this->hasMany(Project::class, 'customer_id');
     }
 
-     public function invoices()
+    public function invoices()
     {
         return $this->hasMany(Invoice::class);
     }
@@ -130,5 +129,20 @@ class Customer extends Model
     public function payments()
     {
         return $this->hasMany(Payment::class);
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'customer_id');
+    }
+
+    public function customerFeedback()
+    {
+        return $this->hasMany(CustomerFeedback::class, 'customer_id');
+    }
+
+    public function ticketReplies()
+    {
+        return $this->hasManyThrough(TicketReply::class,Ticket::class);
     }
 }

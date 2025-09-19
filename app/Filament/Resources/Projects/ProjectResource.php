@@ -8,10 +8,13 @@ use App\Filament\Resources\Projects\Pages\CreateProject;
 use App\Filament\Resources\Projects\Pages\EditProject;
 use App\Filament\Resources\Projects\Pages\ListProjects;
 use App\Filament\Resources\Projects\Pages\ViewProject;
+use App\Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\InvoicesRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\NotesRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager;
 use App\Filament\Resources\Projects\RelationManagers\TasksRelationManager;
+use App\Filament\Resources\Projects\RelationManagers\TicketRepliesRelationManager;
+use App\Filament\Resources\Projects\RelationManagers\TicketsRelationManager;
 use App\Filament\Resources\Projects\Schemas\ProjectForm;
 use App\Filament\Resources\Projects\Tables\ProjectsTable;
 use App\Models\Project;
@@ -51,6 +54,12 @@ class ProjectResource extends Resource
             TasksRelationManager::class,
 
             NotesRelationManager::class,
+
+            TicketsRelationManager::class,
+
+            // CustomerFeedbackRelationManager::class,
+
+            // TicketRepliesRelationManager::class,
         ];
     }
 

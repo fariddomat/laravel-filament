@@ -66,7 +66,7 @@ class Project extends Model
         return $this->morphMany(Document::class, 'documentable');
     }
 
-        public function milestones()
+    public function milestones()
     {
         return $this->hasMany(Milestone::class);
     }
@@ -77,7 +77,7 @@ class Project extends Model
         return $this->hasMany(Timesheet::class);
     }
 
-        public function invoices()
+    public function invoices()
     {
         return $this->hasMany(Invoice::class);
     }
@@ -89,7 +89,21 @@ class Project extends Model
 
     public function notes()
     {
-                return $this->morphMany(Note::class, 'noteable');
+        return $this->morphMany(Note::class, 'noteable');
+    }
 
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function customerFeedback()
+    {
+        return $this->hasMany(CustomerFeedback::class);
+    }
+
+    public function ticketReplies()
+    {
+        return $this->hasManyThrough(TicketReply::class, Ticket::class);
     }
 }
