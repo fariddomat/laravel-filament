@@ -98,7 +98,7 @@ To integrate the `Project` model into your CRM project (replacing `Client` with 
     Create notes table migration (polymorphic for noteable)
     Create discussions table migration
 Create activity_logs table migration (polymorphic for loggable)
-Create contracts table migration
+    Create contracts table migration
 Create sales table migration
     Create customer_feedback table migration
     Create Milestone model with belongsTo(Project::class)
@@ -108,17 +108,25 @@ Create sales table migration
     Create Note model with morphTo for noteable
     Create Discussion model with belongsTo(Project::class)
 Create ActivityLog model with morphTo for loggable
-Create Contract model with belongsTo(Project::class)
+    Create Contract model with belongsTo(Project::class)
 Create Sale model with belongsTo(Project::class)
     Create CustomerFeedback model with belongsTo(Project::class)
-Update Project model to add hasMany for milestones, timesheets, invoices, tickets (or reuse tasks), discussions, contracts, sales, feedback, and morphMany for notes, activities
-Update Customer model to add hasMany for invoices, contracts, sales, feedback if they relate to customers too
-Create Filament resources for new models (e.g., MilestoneResource, TimesheetResource, etc.)
-Add relation managers to ProjectResource for managing milestones, timesheets, invoices, tickets, notes, discussions, activities, contracts, sales, feedback
-Configure bezhansalleh/filament-shield permissions for new resources
+    Update Project model to add hasMany for milestones, timesheets, invoices, tickets (or reuse tasks), discussions, contracts, sales, feedback, and morphMany for notes, activities
+    Update Customer model to add hasMany for invoices, contracts, sales, feedback if they relate to customers too
+
+    Create Filament resources for new models (e.g., MilestoneResource, TimesheetResource, etc.)
+    Add relation managers to ProjectResource for managing milestones, timesheets, invoices, tickets, notes, discussions, activities, contracts, sales, feedback
+
+    Configure bezhansalleh/filament-shield permissions for new resources
+
 Create factories/seeders for new models for testing
+
 Update ProjectForm schema to include fields for new relationships (if needed)
+
 Ensure polymorphic relationships (notes, activities) are properly constrained
+
 Validate Laravel 12 compatibility for new migrations and models
+
 Run migrations and test relationships in Filament UI
+
 Optionally, add tabs to ListProjects for filtering by new relations (e.g., invoices by status)

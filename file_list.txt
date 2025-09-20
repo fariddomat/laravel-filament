@@ -1,18 +1,34 @@
 Models:
 - \app/Models\Blog.php
+- \app/Models\Contract.php
+- \app/Models\ContractTemplate.php
 - \app/Models\CustomField.php
 - \app/Models\CustomFieldCustomer.php
 - \app/Models\Customer.php
+- \app/Models\CustomerFeedback.php
 - \app/Models\CustomerPipelineStage.php
+- \app/Models\Discussion.php
+- \app/Models\DiscussionReply.php
 - \app/Models\Document.php
 - \app/Models\Invitation.php
+- \app/Models\Invoice.php
 - \app/Models\LeadSource.php
+- \app/Models\Milestone.php
+- \app/Models\Note.php
+- \app/Models\Payment.php
 - \app/Models\PipelineStage.php
 - \app/Models\Product.php
 - \app/Models\ProductQuote.php
+- \app/Models\Project.php
 - \app/Models\Quote.php
+- \app/Models\Setting.php
+- \app/Models\Status.php
 - \app/Models\Tag.php
 - \app/Models\Task.php
+- \app/Models\Tax.php
+- \app/Models\Ticket.php
+- \app/Models\TicketReply.php
+- \app/Models\Timesheet.php
 - \app/Models\User.php
 
 Filament:
@@ -34,6 +50,55 @@ Filament:
     - \app/Filament\Resources\Blogs\Pages\ListBlogs.php
     - \app/Filament\Resources\Blogs\Schemas\BlogForm.php
     - \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+  - \app/Filament\Resources\ContractTemplates
+    - \app/Filament\Resources\ContractTemplates\Pages
+      - \app/Filament\Resources\ContractTemplates\Pages\CreateContractTemplate.php
+      - \app/Filament\Resources\ContractTemplates\Pages\EditContractTemplate.php
+      - \app/Filament\Resources\ContractTemplates\Pages\ListContractTemplates.php
+    - \app/Filament\Resources\ContractTemplates\Schemas
+      - \app/Filament\Resources\ContractTemplates\Schemas\ContractTemplateForm.php
+    - \app/Filament\Resources\ContractTemplates\Tables
+      - \app/Filament\Resources\ContractTemplates\Tables\ContractTemplatesTable.php
+    - \app/Filament\Resources\ContractTemplates\ContractTemplateResource.php
+    - \app/Filament\Resources\ContractTemplates\Pages\CreateContractTemplate.php
+    - \app/Filament\Resources\ContractTemplates\Pages\EditContractTemplate.php
+    - \app/Filament\Resources\ContractTemplates\Pages\ListContractTemplates.php
+    - \app/Filament\Resources\ContractTemplates\Schemas\ContractTemplateForm.php
+    - \app/Filament\Resources\ContractTemplates\Tables\ContractTemplatesTable.php
+  - \app/Filament\Resources\Contracts
+    - \app/Filament\Resources\Contracts\Pages
+      - \app/Filament\Resources\Contracts\Pages\CreateContract.php
+      - \app/Filament\Resources\Contracts\Pages\EditContract.php
+      - \app/Filament\Resources\Contracts\Pages\ListContracts.php
+      - \app/Filament\Resources\Contracts\Pages\ViewContract.php
+    - \app/Filament\Resources\Contracts\Schemas
+      - \app/Filament\Resources\Contracts\Schemas\ContractForm.php
+      - \app/Filament\Resources\Contracts\Schemas\ContractInfolist.php
+    - \app/Filament\Resources\Contracts\Tables
+      - \app/Filament\Resources\Contracts\Tables\ContractsTable.php
+    - \app/Filament\Resources\Contracts\ContractResource.php
+    - \app/Filament\Resources\Contracts\Pages\CreateContract.php
+    - \app/Filament\Resources\Contracts\Pages\EditContract.php
+    - \app/Filament\Resources\Contracts\Pages\ListContracts.php
+    - \app/Filament\Resources\Contracts\Pages\ViewContract.php
+    - \app/Filament\Resources\Contracts\Schemas\ContractForm.php
+    - \app/Filament\Resources\Contracts\Schemas\ContractInfolist.php
+    - \app/Filament\Resources\Contracts\Tables\ContractsTable.php
+  - \app/Filament\Resources\CrmSettings
+    - \app/Filament\Resources\CrmSettings\Pages
+      - \app/Filament\Resources\CrmSettings\Pages\CreateCrmSettings.php
+      - \app/Filament\Resources\CrmSettings\Pages\EditCrmSettings.php
+      - \app/Filament\Resources\CrmSettings\Pages\ListCrmSettings.php
+    - \app/Filament\Resources\CrmSettings\Schemas
+      - \app/Filament\Resources\CrmSettings\Schemas\CrmSettingsForm.php
+    - \app/Filament\Resources\CrmSettings\Tables
+      - \app/Filament\Resources\CrmSettings\Tables\CrmSettingsTable.php
+    - \app/Filament\Resources\CrmSettings\CrmSettingsResource.php
+    - \app/Filament\Resources\CrmSettings\Pages\CreateCrmSettings.php
+    - \app/Filament\Resources\CrmSettings\Pages\EditCrmSettings.php
+    - \app/Filament\Resources\CrmSettings\Pages\ListCrmSettings.php
+    - \app/Filament\Resources\CrmSettings\Schemas\CrmSettingsForm.php
+    - \app/Filament\Resources\CrmSettings\Tables\CrmSettingsTable.php
   - \app/Filament\Resources\CustomFields
     - \app/Filament\Resources\CustomFields\Pages
       - \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
@@ -54,6 +119,21 @@ Filament:
       - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
       - \app/Filament\Resources\Customers\Pages\EditCustomer.php
       - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+    - \app/Filament\Resources\Customers\RelationManagers
+      - \app/Filament\Resources\Customers\RelationManagers\ContractsRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\DiscussionsRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\DocumentsRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\InvoicesRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\NotesRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\PaymentsRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\PipelineStagesRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\ProjectsRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\QuotesRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\TagsRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\TasksRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\TicketRepliesRelationManager.php
+      - \app/Filament\Resources\Customers\RelationManagers\TicketsRelationManager.php
     - \app/Filament\Resources\Customers\Schemas
       - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
     - \app/Filament\Resources\Customers\Tables
@@ -62,8 +142,52 @@ Filament:
     - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
     - \app/Filament\Resources\Customers\Pages\EditCustomer.php
     - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+    - \app/Filament\Resources\Customers\RelationManagers\ContractsRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\DiscussionsRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\DocumentsRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\InvoicesRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\NotesRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\PaymentsRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\PipelineStagesRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\ProjectsRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\QuotesRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\TagsRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\TasksRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\TicketRepliesRelationManager.php
+    - \app/Filament\Resources\Customers\RelationManagers\TicketsRelationManager.php
     - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
     - \app/Filament\Resources\Customers\Tables\CustomersTable.php
+  - \app/Filament\Resources\Discussions
+    - \app/Filament\Resources\Discussions\Pages
+      - \app/Filament\Resources\Discussions\Pages\CreateDiscussion.php
+      - \app/Filament\Resources\Discussions\Pages\EditDiscussion.php
+      - \app/Filament\Resources\Discussions\Pages\ListDiscussions.php
+    - \app/Filament\Resources\Discussions\Schemas
+      - \app/Filament\Resources\Discussions\Schemas\DiscussionForm.php
+    - \app/Filament\Resources\Discussions\Tables
+      - \app/Filament\Resources\Discussions\Tables\DiscussionsTable.php
+    - \app/Filament\Resources\Discussions\DiscussionResource.php
+    - \app/Filament\Resources\Discussions\Pages\CreateDiscussion.php
+    - \app/Filament\Resources\Discussions\Pages\EditDiscussion.php
+    - \app/Filament\Resources\Discussions\Pages\ListDiscussions.php
+    - \app/Filament\Resources\Discussions\Schemas\DiscussionForm.php
+    - \app/Filament\Resources\Discussions\Tables\DiscussionsTable.php
+  - \app/Filament\Resources\Invoices
+    - \app/Filament\Resources\Invoices\Pages
+      - \app/Filament\Resources\Invoices\Pages\CreateInvoice.php
+      - \app/Filament\Resources\Invoices\Pages\EditInvoice.php
+      - \app/Filament\Resources\Invoices\Pages\ListInvoices.php
+    - \app/Filament\Resources\Invoices\Schemas
+      - \app/Filament\Resources\Invoices\Schemas\InvoiceForm.php
+    - \app/Filament\Resources\Invoices\Tables
+      - \app/Filament\Resources\Invoices\Tables\InvoicesTable.php
+    - \app/Filament\Resources\Invoices\InvoiceResource.php
+    - \app/Filament\Resources\Invoices\Pages\CreateInvoice.php
+    - \app/Filament\Resources\Invoices\Pages\EditInvoice.php
+    - \app/Filament\Resources\Invoices\Pages\ListInvoices.php
+    - \app/Filament\Resources\Invoices\Schemas\InvoiceForm.php
+    - \app/Filament\Resources\Invoices\Tables\InvoicesTable.php
   - \app/Filament\Resources\LeadSources
     - \app/Filament\Resources\LeadSources\Pages
       - \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
@@ -79,6 +203,57 @@ Filament:
     - \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
     - \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
     - \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+  - \app/Filament\Resources\Milestones
+    - \app/Filament\Resources\Milestones\Pages
+      - \app/Filament\Resources\Milestones\Pages\CreateMilestone.php
+      - \app/Filament\Resources\Milestones\Pages\EditMilestone.php
+      - \app/Filament\Resources\Milestones\Pages\ListMilestones.php
+      - \app/Filament\Resources\Milestones\Pages\ViewMilestone.php
+    - \app/Filament\Resources\Milestones\Schemas
+      - \app/Filament\Resources\Milestones\Schemas\MilestoneForm.php
+    - \app/Filament\Resources\Milestones\Tables
+      - \app/Filament\Resources\Milestones\Tables\MilestonesTable.php
+    - \app/Filament\Resources\Milestones\MilestoneResource.php
+    - \app/Filament\Resources\Milestones\Pages\CreateMilestone.php
+    - \app/Filament\Resources\Milestones\Pages\EditMilestone.php
+    - \app/Filament\Resources\Milestones\Pages\ListMilestones.php
+    - \app/Filament\Resources\Milestones\Pages\ViewMilestone.php
+    - \app/Filament\Resources\Milestones\Schemas\MilestoneForm.php
+    - \app/Filament\Resources\Milestones\Tables\MilestonesTable.php
+  - \app/Filament\Resources\Notes
+    - \app/Filament\Resources\Notes\Pages
+      - \app/Filament\Resources\Notes\Pages\CreateNote.php
+      - \app/Filament\Resources\Notes\Pages\EditNote.php
+      - \app/Filament\Resources\Notes\Pages\ListNotes.php
+      - \app/Filament\Resources\Notes\Pages\ViewNote.php
+    - \app/Filament\Resources\Notes\Schemas
+      - \app/Filament\Resources\Notes\Schemas\NoteForm.php
+      - \app/Filament\Resources\Notes\Schemas\NoteInfolist.php
+    - \app/Filament\Resources\Notes\Tables
+      - \app/Filament\Resources\Notes\Tables\NotesTable.php
+    - \app/Filament\Resources\Notes\NoteResource.php
+    - \app/Filament\Resources\Notes\Pages\CreateNote.php
+    - \app/Filament\Resources\Notes\Pages\EditNote.php
+    - \app/Filament\Resources\Notes\Pages\ListNotes.php
+    - \app/Filament\Resources\Notes\Pages\ViewNote.php
+    - \app/Filament\Resources\Notes\Schemas\NoteForm.php
+    - \app/Filament\Resources\Notes\Schemas\NoteInfolist.php
+    - \app/Filament\Resources\Notes\Tables\NotesTable.php
+  - \app/Filament\Resources\Payments
+    - \app/Filament\Resources\Payments\Pages
+      - \app/Filament\Resources\Payments\Pages\CreatePayment.php
+      - \app/Filament\Resources\Payments\Pages\EditPayment.php
+      - \app/Filament\Resources\Payments\Pages\ListPayments.php
+    - \app/Filament\Resources\Payments\Schemas
+      - \app/Filament\Resources\Payments\Schemas\PaymentForm.php
+    - \app/Filament\Resources\Payments\Tables
+      - \app/Filament\Resources\Payments\Tables\PaymentsTable.php
+    - \app/Filament\Resources\Payments\Pages\CreatePayment.php
+    - \app/Filament\Resources\Payments\Pages\EditPayment.php
+    - \app/Filament\Resources\Payments\Pages\ListPayments.php
+    - \app/Filament\Resources\Payments\PaymentResource.php
+    - \app/Filament\Resources\Payments\Schemas\PaymentForm.php
+    - \app/Filament\Resources\Payments\Tables\PaymentsTable.php
   - \app/Filament\Resources\PipelineStages
     - \app/Filament\Resources\PipelineStages\Pages
       - \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
@@ -109,6 +284,44 @@ Filament:
     - \app/Filament\Resources\Products\ProductResource.php
     - \app/Filament\Resources\Products\Schemas\ProductForm.php
     - \app/Filament\Resources\Products\Tables\ProductsTable.php
+  - \app/Filament\Resources\Projects
+    - \app/Filament\Resources\Projects\Pages
+      - \app/Filament\Resources\Projects\Pages\CreateProject.php
+      - \app/Filament\Resources\Projects\Pages\EditProject.php
+      - \app/Filament\Resources\Projects\Pages\ListProjects.php
+      - \app/Filament\Resources\Projects\Pages\ViewProject.php
+    - \app/Filament\Resources\Projects\RelationManagers
+      - \app/Filament\Resources\Projects\RelationManagers\ContractsRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\DiscussionsRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\InvoicesRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\MilestonesRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\NotesRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\TasksRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\TicketRepliesRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\TicketsRelationManager.php
+      - \app/Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager.php
+    - \app/Filament\Resources\Projects\Schemas
+      - \app/Filament\Resources\Projects\Schemas\ProjectForm.php
+    - \app/Filament\Resources\Projects\Tables
+      - \app/Filament\Resources\Projects\Tables\ProjectsTable.php
+    - \app/Filament\Resources\Projects\Pages\CreateProject.php
+    - \app/Filament\Resources\Projects\Pages\EditProject.php
+    - \app/Filament\Resources\Projects\Pages\ListProjects.php
+    - \app/Filament\Resources\Projects\Pages\ViewProject.php
+    - \app/Filament\Resources\Projects\ProjectResource.php
+    - \app/Filament\Resources\Projects\RelationManagers\ContractsRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\DiscussionsRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\InvoicesRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\MilestonesRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\NotesRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\TasksRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\TicketRepliesRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\TicketsRelationManager.php
+    - \app/Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager.php
+    - \app/Filament\Resources\Projects\Schemas\ProjectForm.php
+    - \app/Filament\Resources\Projects\Tables\ProjectsTable.php
   - \app/Filament\Resources\Quotes
     - \app/Filament\Resources\Quotes\Pages
       - \app/Filament\Resources\Quotes\Pages\CreateQuote.php
@@ -126,6 +339,21 @@ Filament:
     - \app/Filament\Resources\Quotes\QuoteResource.php
     - \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
     - \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+  - \app/Filament\Resources\Statuses
+    - \app/Filament\Resources\Statuses\Pages
+      - \app/Filament\Resources\Statuses\Pages\CreateStatus.php
+      - \app/Filament\Resources\Statuses\Pages\EditStatus.php
+      - \app/Filament\Resources\Statuses\Pages\ListStatuses.php
+    - \app/Filament\Resources\Statuses\Schemas
+      - \app/Filament\Resources\Statuses\Schemas\StatusForm.php
+    - \app/Filament\Resources\Statuses\Tables
+      - \app/Filament\Resources\Statuses\Tables\StatusesTable.php
+    - \app/Filament\Resources\Statuses\Pages\CreateStatus.php
+    - \app/Filament\Resources\Statuses\Pages\EditStatus.php
+    - \app/Filament\Resources\Statuses\Pages\ListStatuses.php
+    - \app/Filament\Resources\Statuses\Schemas\StatusForm.php
+    - \app/Filament\Resources\Statuses\StatusResource.php
+    - \app/Filament\Resources\Statuses\Tables\StatusesTable.php
   - \app/Filament\Resources\Tags
     - \app/Filament\Resources\Tags\Pages
       - \app/Filament\Resources\Tags\Pages\CreateTag.php
@@ -156,6 +384,55 @@ Filament:
     - \app/Filament\Resources\Tasks\Schemas\TaskForm.php
     - \app/Filament\Resources\Tasks\Tables\TasksTable.php
     - \app/Filament\Resources\Tasks\TaskResource.php
+  - \app/Filament\Resources\Taxes
+    - \app/Filament\Resources\Taxes\Pages
+      - \app/Filament\Resources\Taxes\Pages\CreateTax.php
+      - \app/Filament\Resources\Taxes\Pages\EditTax.php
+      - \app/Filament\Resources\Taxes\Pages\ListTaxes.php
+    - \app/Filament\Resources\Taxes\Schemas
+      - \app/Filament\Resources\Taxes\Schemas\TaxForm.php
+    - \app/Filament\Resources\Taxes\Tables
+      - \app/Filament\Resources\Taxes\Tables\TaxesTable.php
+    - \app/Filament\Resources\Taxes\Pages\CreateTax.php
+    - \app/Filament\Resources\Taxes\Pages\EditTax.php
+    - \app/Filament\Resources\Taxes\Pages\ListTaxes.php
+    - \app/Filament\Resources\Taxes\Schemas\TaxForm.php
+    - \app/Filament\Resources\Taxes\Tables\TaxesTable.php
+    - \app/Filament\Resources\Taxes\TaxResource.php
+  - \app/Filament\Resources\Tickets
+    - \app/Filament\Resources\Tickets\Pages
+      - \app/Filament\Resources\Tickets\Pages\CreateTicket.php
+      - \app/Filament\Resources\Tickets\Pages\EditTicket.php
+      - \app/Filament\Resources\Tickets\Pages\ListTickets.php
+      - \app/Filament\Resources\Tickets\Pages\ViewTicket.php
+    - \app/Filament\Resources\Tickets\Schemas
+      - \app/Filament\Resources\Tickets\Schemas\TicketForm.php
+      - \app/Filament\Resources\Tickets\Schemas\TicketInfolist.php
+    - \app/Filament\Resources\Tickets\Tables
+      - \app/Filament\Resources\Tickets\Tables\TicketsTable.php
+    - \app/Filament\Resources\Tickets\Pages\CreateTicket.php
+    - \app/Filament\Resources\Tickets\Pages\EditTicket.php
+    - \app/Filament\Resources\Tickets\Pages\ListTickets.php
+    - \app/Filament\Resources\Tickets\Pages\ViewTicket.php
+    - \app/Filament\Resources\Tickets\Schemas\TicketForm.php
+    - \app/Filament\Resources\Tickets\Schemas\TicketInfolist.php
+    - \app/Filament\Resources\Tickets\Tables\TicketsTable.php
+    - \app/Filament\Resources\Tickets\TicketResource.php
+  - \app/Filament\Resources\Timesheets
+    - \app/Filament\Resources\Timesheets\Pages
+      - \app/Filament\Resources\Timesheets\Pages\CreateTimesheet.php
+      - \app/Filament\Resources\Timesheets\Pages\EditTimesheet.php
+      - \app/Filament\Resources\Timesheets\Pages\ListTimesheets.php
+    - \app/Filament\Resources\Timesheets\Schemas
+      - \app/Filament\Resources\Timesheets\Schemas\TimesheetForm.php
+    - \app/Filament\Resources\Timesheets\Tables
+      - \app/Filament\Resources\Timesheets\Tables\TimesheetsTable.php
+    - \app/Filament\Resources\Timesheets\Pages\CreateTimesheet.php
+    - \app/Filament\Resources\Timesheets\Pages\EditTimesheet.php
+    - \app/Filament\Resources\Timesheets\Pages\ListTimesheets.php
+    - \app/Filament\Resources\Timesheets\Schemas\TimesheetForm.php
+    - \app/Filament\Resources\Timesheets\Tables\TimesheetsTable.php
+    - \app/Filament\Resources\Timesheets\TimesheetResource.php
   - \app/Filament\Resources\Users
     - \app/Filament\Resources\Users\Pages
       - \app/Filament\Resources\Users\Pages\CreateUser.php
@@ -177,6 +454,26 @@ Filament:
   - \app/Filament\Resources\Blogs\Pages\ListBlogs.php
   - \app/Filament\Resources\Blogs\Schemas\BlogForm.php
   - \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+  - \app/Filament\Resources\ContractTemplates\ContractTemplateResource.php
+  - \app/Filament\Resources\ContractTemplates\Pages\CreateContractTemplate.php
+  - \app/Filament\Resources\ContractTemplates\Pages\EditContractTemplate.php
+  - \app/Filament\Resources\ContractTemplates\Pages\ListContractTemplates.php
+  - \app/Filament\Resources\ContractTemplates\Schemas\ContractTemplateForm.php
+  - \app/Filament\Resources\ContractTemplates\Tables\ContractTemplatesTable.php
+  - \app/Filament\Resources\Contracts\ContractResource.php
+  - \app/Filament\Resources\Contracts\Pages\CreateContract.php
+  - \app/Filament\Resources\Contracts\Pages\EditContract.php
+  - \app/Filament\Resources\Contracts\Pages\ListContracts.php
+  - \app/Filament\Resources\Contracts\Pages\ViewContract.php
+  - \app/Filament\Resources\Contracts\Schemas\ContractForm.php
+  - \app/Filament\Resources\Contracts\Schemas\ContractInfolist.php
+  - \app/Filament\Resources\Contracts\Tables\ContractsTable.php
+  - \app/Filament\Resources\CrmSettings\CrmSettingsResource.php
+  - \app/Filament\Resources\CrmSettings\Pages\CreateCrmSettings.php
+  - \app/Filament\Resources\CrmSettings\Pages\EditCrmSettings.php
+  - \app/Filament\Resources\CrmSettings\Pages\ListCrmSettings.php
+  - \app/Filament\Resources\CrmSettings\Schemas\CrmSettingsForm.php
+  - \app/Filament\Resources\CrmSettings\Tables\CrmSettingsTable.php
   - \app/Filament\Resources\CustomFields\CustomFieldResource.php
   - \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
   - \app/Filament\Resources\CustomFields\Pages\EditCustomField.php
@@ -187,14 +484,61 @@ Filament:
   - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
   - \app/Filament\Resources\Customers\Pages\EditCustomer.php
   - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+  - \app/Filament\Resources\Customers\RelationManagers\ContractsRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\DiscussionsRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\DocumentsRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\InvoicesRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\NotesRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\PaymentsRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\PipelineStagesRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\ProjectsRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\QuotesRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\TagsRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\TasksRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\TicketRepliesRelationManager.php
+  - \app/Filament\Resources\Customers\RelationManagers\TicketsRelationManager.php
   - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
   - \app/Filament\Resources\Customers\Tables\CustomersTable.php
+  - \app/Filament\Resources\Discussions\DiscussionResource.php
+  - \app/Filament\Resources\Discussions\Pages\CreateDiscussion.php
+  - \app/Filament\Resources\Discussions\Pages\EditDiscussion.php
+  - \app/Filament\Resources\Discussions\Pages\ListDiscussions.php
+  - \app/Filament\Resources\Discussions\Schemas\DiscussionForm.php
+  - \app/Filament\Resources\Discussions\Tables\DiscussionsTable.php
+  - \app/Filament\Resources\Invoices\InvoiceResource.php
+  - \app/Filament\Resources\Invoices\Pages\CreateInvoice.php
+  - \app/Filament\Resources\Invoices\Pages\EditInvoice.php
+  - \app/Filament\Resources\Invoices\Pages\ListInvoices.php
+  - \app/Filament\Resources\Invoices\Schemas\InvoiceForm.php
+  - \app/Filament\Resources\Invoices\Tables\InvoicesTable.php
   - \app/Filament\Resources\LeadSources\LeadSourceResource.php
   - \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
   - \app/Filament\Resources\LeadSources\Pages\EditLeadSource.php
   - \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
   - \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
   - \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+  - \app/Filament\Resources\Milestones\MilestoneResource.php
+  - \app/Filament\Resources\Milestones\Pages\CreateMilestone.php
+  - \app/Filament\Resources\Milestones\Pages\EditMilestone.php
+  - \app/Filament\Resources\Milestones\Pages\ListMilestones.php
+  - \app/Filament\Resources\Milestones\Pages\ViewMilestone.php
+  - \app/Filament\Resources\Milestones\Schemas\MilestoneForm.php
+  - \app/Filament\Resources\Milestones\Tables\MilestonesTable.php
+  - \app/Filament\Resources\Notes\NoteResource.php
+  - \app/Filament\Resources\Notes\Pages\CreateNote.php
+  - \app/Filament\Resources\Notes\Pages\EditNote.php
+  - \app/Filament\Resources\Notes\Pages\ListNotes.php
+  - \app/Filament\Resources\Notes\Pages\ViewNote.php
+  - \app/Filament\Resources\Notes\Schemas\NoteForm.php
+  - \app/Filament\Resources\Notes\Schemas\NoteInfolist.php
+  - \app/Filament\Resources\Notes\Tables\NotesTable.php
+  - \app/Filament\Resources\Payments\Pages\CreatePayment.php
+  - \app/Filament\Resources\Payments\Pages\EditPayment.php
+  - \app/Filament\Resources\Payments\Pages\ListPayments.php
+  - \app/Filament\Resources\Payments\PaymentResource.php
+  - \app/Filament\Resources\Payments\Schemas\PaymentForm.php
+  - \app/Filament\Resources\Payments\Tables\PaymentsTable.php
   - \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
   - \app/Filament\Resources\PipelineStages\Pages\EditPipelineStage.php
   - \app/Filament\Resources\PipelineStages\Pages\ListPipelineStages.php
@@ -207,6 +551,23 @@ Filament:
   - \app/Filament\Resources\Products\ProductResource.php
   - \app/Filament\Resources\Products\Schemas\ProductForm.php
   - \app/Filament\Resources\Products\Tables\ProductsTable.php
+  - \app/Filament\Resources\Projects\Pages\CreateProject.php
+  - \app/Filament\Resources\Projects\Pages\EditProject.php
+  - \app/Filament\Resources\Projects\Pages\ListProjects.php
+  - \app/Filament\Resources\Projects\Pages\ViewProject.php
+  - \app/Filament\Resources\Projects\ProjectResource.php
+  - \app/Filament\Resources\Projects\RelationManagers\ContractsRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\DiscussionsRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\InvoicesRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\MilestonesRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\NotesRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\TasksRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\TicketRepliesRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\TicketsRelationManager.php
+  - \app/Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager.php
+  - \app/Filament\Resources\Projects\Schemas\ProjectForm.php
+  - \app/Filament\Resources\Projects\Tables\ProjectsTable.php
   - \app/Filament\Resources\Quotes\Pages\CreateQuote.php
   - \app/Filament\Resources\Quotes\Pages\EditQuote.php
   - \app/Filament\Resources\Quotes\Pages\ListQuotes.php
@@ -214,6 +575,12 @@ Filament:
   - \app/Filament\Resources\Quotes\QuoteResource.php
   - \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
   - \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+  - \app/Filament\Resources\Statuses\Pages\CreateStatus.php
+  - \app/Filament\Resources\Statuses\Pages\EditStatus.php
+  - \app/Filament\Resources\Statuses\Pages\ListStatuses.php
+  - \app/Filament\Resources\Statuses\Schemas\StatusForm.php
+  - \app/Filament\Resources\Statuses\StatusResource.php
+  - \app/Filament\Resources\Statuses\Tables\StatusesTable.php
   - \app/Filament\Resources\Tags\Pages\CreateTag.php
   - \app/Filament\Resources\Tags\Pages\EditTag.php
   - \app/Filament\Resources\Tags\Pages\ListTags.php
@@ -226,6 +593,26 @@ Filament:
   - \app/Filament\Resources\Tasks\Schemas\TaskForm.php
   - \app/Filament\Resources\Tasks\Tables\TasksTable.php
   - \app/Filament\Resources\Tasks\TaskResource.php
+  - \app/Filament\Resources\Taxes\Pages\CreateTax.php
+  - \app/Filament\Resources\Taxes\Pages\EditTax.php
+  - \app/Filament\Resources\Taxes\Pages\ListTaxes.php
+  - \app/Filament\Resources\Taxes\Schemas\TaxForm.php
+  - \app/Filament\Resources\Taxes\Tables\TaxesTable.php
+  - \app/Filament\Resources\Taxes\TaxResource.php
+  - \app/Filament\Resources\Tickets\Pages\CreateTicket.php
+  - \app/Filament\Resources\Tickets\Pages\EditTicket.php
+  - \app/Filament\Resources\Tickets\Pages\ListTickets.php
+  - \app/Filament\Resources\Tickets\Pages\ViewTicket.php
+  - \app/Filament\Resources\Tickets\Schemas\TicketForm.php
+  - \app/Filament\Resources\Tickets\Schemas\TicketInfolist.php
+  - \app/Filament\Resources\Tickets\Tables\TicketsTable.php
+  - \app/Filament\Resources\Tickets\TicketResource.php
+  - \app/Filament\Resources\Timesheets\Pages\CreateTimesheet.php
+  - \app/Filament\Resources\Timesheets\Pages\EditTimesheet.php
+  - \app/Filament\Resources\Timesheets\Pages\ListTimesheets.php
+  - \app/Filament\Resources\Timesheets\Schemas\TimesheetForm.php
+  - \app/Filament\Resources\Timesheets\Tables\TimesheetsTable.php
+  - \app/Filament\Resources\Timesheets\TimesheetResource.php
   - \app/Filament\Resources\Users\Pages\CreateUser.php
   - \app/Filament\Resources\Users\Pages\EditUser.php
   - \app/Filament\Resources\Users\Pages\ListUsers.php
@@ -242,6 +629,26 @@ Filament:
 - \app/Filament\Resources\Blogs\Pages\ListBlogs.php
 - \app/Filament\Resources\Blogs\Schemas\BlogForm.php
 - \app/Filament\Resources\Blogs\Tables\BlogsTable.php
+- \app/Filament\Resources\ContractTemplates\ContractTemplateResource.php
+- \app/Filament\Resources\ContractTemplates\Pages\CreateContractTemplate.php
+- \app/Filament\Resources\ContractTemplates\Pages\EditContractTemplate.php
+- \app/Filament\Resources\ContractTemplates\Pages\ListContractTemplates.php
+- \app/Filament\Resources\ContractTemplates\Schemas\ContractTemplateForm.php
+- \app/Filament\Resources\ContractTemplates\Tables\ContractTemplatesTable.php
+- \app/Filament\Resources\Contracts\ContractResource.php
+- \app/Filament\Resources\Contracts\Pages\CreateContract.php
+- \app/Filament\Resources\Contracts\Pages\EditContract.php
+- \app/Filament\Resources\Contracts\Pages\ListContracts.php
+- \app/Filament\Resources\Contracts\Pages\ViewContract.php
+- \app/Filament\Resources\Contracts\Schemas\ContractForm.php
+- \app/Filament\Resources\Contracts\Schemas\ContractInfolist.php
+- \app/Filament\Resources\Contracts\Tables\ContractsTable.php
+- \app/Filament\Resources\CrmSettings\CrmSettingsResource.php
+- \app/Filament\Resources\CrmSettings\Pages\CreateCrmSettings.php
+- \app/Filament\Resources\CrmSettings\Pages\EditCrmSettings.php
+- \app/Filament\Resources\CrmSettings\Pages\ListCrmSettings.php
+- \app/Filament\Resources\CrmSettings\Schemas\CrmSettingsForm.php
+- \app/Filament\Resources\CrmSettings\Tables\CrmSettingsTable.php
 - \app/Filament\Resources\CustomFields\CustomFieldResource.php
 - \app/Filament\Resources\CustomFields\Pages\CreateCustomField.php
 - \app/Filament\Resources\CustomFields\Pages\EditCustomField.php
@@ -252,14 +659,61 @@ Filament:
 - \app/Filament\Resources\Customers\Pages\CreateCustomer.php
 - \app/Filament\Resources\Customers\Pages\EditCustomer.php
 - \app/Filament\Resources\Customers\Pages\ListCustomers.php
+- \app/Filament\Resources\Customers\RelationManagers\ContractsRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\CustomerFeedbackRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\DiscussionsRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\DocumentsRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\InvoicesRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\NotesRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\PaymentsRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\PipelineStagesRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\ProjectsRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\QuotesRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\TagsRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\TasksRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\TicketRepliesRelationManager.php
+- \app/Filament\Resources\Customers\RelationManagers\TicketsRelationManager.php
 - \app/Filament\Resources\Customers\Schemas\CustomerForm.php
 - \app/Filament\Resources\Customers\Tables\CustomersTable.php
+- \app/Filament\Resources\Discussions\DiscussionResource.php
+- \app/Filament\Resources\Discussions\Pages\CreateDiscussion.php
+- \app/Filament\Resources\Discussions\Pages\EditDiscussion.php
+- \app/Filament\Resources\Discussions\Pages\ListDiscussions.php
+- \app/Filament\Resources\Discussions\Schemas\DiscussionForm.php
+- \app/Filament\Resources\Discussions\Tables\DiscussionsTable.php
+- \app/Filament\Resources\Invoices\InvoiceResource.php
+- \app/Filament\Resources\Invoices\Pages\CreateInvoice.php
+- \app/Filament\Resources\Invoices\Pages\EditInvoice.php
+- \app/Filament\Resources\Invoices\Pages\ListInvoices.php
+- \app/Filament\Resources\Invoices\Schemas\InvoiceForm.php
+- \app/Filament\Resources\Invoices\Tables\InvoicesTable.php
 - \app/Filament\Resources\LeadSources\LeadSourceResource.php
 - \app/Filament\Resources\LeadSources\Pages\CreateLeadSource.php
 - \app/Filament\Resources\LeadSources\Pages\EditLeadSource.php
 - \app/Filament\Resources\LeadSources\Pages\ListLeadSources.php
 - \app/Filament\Resources\LeadSources\Schemas\LeadSourceForm.php
 - \app/Filament\Resources\LeadSources\Tables\LeadSourcesTable.php
+- \app/Filament\Resources\Milestones\MilestoneResource.php
+- \app/Filament\Resources\Milestones\Pages\CreateMilestone.php
+- \app/Filament\Resources\Milestones\Pages\EditMilestone.php
+- \app/Filament\Resources\Milestones\Pages\ListMilestones.php
+- \app/Filament\Resources\Milestones\Pages\ViewMilestone.php
+- \app/Filament\Resources\Milestones\Schemas\MilestoneForm.php
+- \app/Filament\Resources\Milestones\Tables\MilestonesTable.php
+- \app/Filament\Resources\Notes\NoteResource.php
+- \app/Filament\Resources\Notes\Pages\CreateNote.php
+- \app/Filament\Resources\Notes\Pages\EditNote.php
+- \app/Filament\Resources\Notes\Pages\ListNotes.php
+- \app/Filament\Resources\Notes\Pages\ViewNote.php
+- \app/Filament\Resources\Notes\Schemas\NoteForm.php
+- \app/Filament\Resources\Notes\Schemas\NoteInfolist.php
+- \app/Filament\Resources\Notes\Tables\NotesTable.php
+- \app/Filament\Resources\Payments\Pages\CreatePayment.php
+- \app/Filament\Resources\Payments\Pages\EditPayment.php
+- \app/Filament\Resources\Payments\Pages\ListPayments.php
+- \app/Filament\Resources\Payments\PaymentResource.php
+- \app/Filament\Resources\Payments\Schemas\PaymentForm.php
+- \app/Filament\Resources\Payments\Tables\PaymentsTable.php
 - \app/Filament\Resources\PipelineStages\Pages\CreatePipelineStage.php
 - \app/Filament\Resources\PipelineStages\Pages\EditPipelineStage.php
 - \app/Filament\Resources\PipelineStages\Pages\ListPipelineStages.php
@@ -272,6 +726,23 @@ Filament:
 - \app/Filament\Resources\Products\ProductResource.php
 - \app/Filament\Resources\Products\Schemas\ProductForm.php
 - \app/Filament\Resources\Products\Tables\ProductsTable.php
+- \app/Filament\Resources\Projects\Pages\CreateProject.php
+- \app/Filament\Resources\Projects\Pages\EditProject.php
+- \app/Filament\Resources\Projects\Pages\ListProjects.php
+- \app/Filament\Resources\Projects\Pages\ViewProject.php
+- \app/Filament\Resources\Projects\ProjectResource.php
+- \app/Filament\Resources\Projects\RelationManagers\ContractsRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\CustomerFeedbackRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\DiscussionsRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\InvoicesRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\MilestonesRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\NotesRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\TasksRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\TicketRepliesRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\TicketsRelationManager.php
+- \app/Filament\Resources\Projects\RelationManagers\TimesheetsRelationManager.php
+- \app/Filament\Resources\Projects\Schemas\ProjectForm.php
+- \app/Filament\Resources\Projects\Tables\ProjectsTable.php
 - \app/Filament\Resources\Quotes\Pages\CreateQuote.php
 - \app/Filament\Resources\Quotes\Pages\EditQuote.php
 - \app/Filament\Resources\Quotes\Pages\ListQuotes.php
@@ -279,6 +750,12 @@ Filament:
 - \app/Filament\Resources\Quotes\QuoteResource.php
 - \app/Filament\Resources\Quotes\Schemas\QuoteForm.php
 - \app/Filament\Resources\Quotes\Tables\QuotesTable.php
+- \app/Filament\Resources\Statuses\Pages\CreateStatus.php
+- \app/Filament\Resources\Statuses\Pages\EditStatus.php
+- \app/Filament\Resources\Statuses\Pages\ListStatuses.php
+- \app/Filament\Resources\Statuses\Schemas\StatusForm.php
+- \app/Filament\Resources\Statuses\StatusResource.php
+- \app/Filament\Resources\Statuses\Tables\StatusesTable.php
 - \app/Filament\Resources\Tags\Pages\CreateTag.php
 - \app/Filament\Resources\Tags\Pages\EditTag.php
 - \app/Filament\Resources\Tags\Pages\ListTags.php
@@ -291,6 +768,26 @@ Filament:
 - \app/Filament\Resources\Tasks\Schemas\TaskForm.php
 - \app/Filament\Resources\Tasks\Tables\TasksTable.php
 - \app/Filament\Resources\Tasks\TaskResource.php
+- \app/Filament\Resources\Taxes\Pages\CreateTax.php
+- \app/Filament\Resources\Taxes\Pages\EditTax.php
+- \app/Filament\Resources\Taxes\Pages\ListTaxes.php
+- \app/Filament\Resources\Taxes\Schemas\TaxForm.php
+- \app/Filament\Resources\Taxes\Tables\TaxesTable.php
+- \app/Filament\Resources\Taxes\TaxResource.php
+- \app/Filament\Resources\Tickets\Pages\CreateTicket.php
+- \app/Filament\Resources\Tickets\Pages\EditTicket.php
+- \app/Filament\Resources\Tickets\Pages\ListTickets.php
+- \app/Filament\Resources\Tickets\Pages\ViewTicket.php
+- \app/Filament\Resources\Tickets\Schemas\TicketForm.php
+- \app/Filament\Resources\Tickets\Schemas\TicketInfolist.php
+- \app/Filament\Resources\Tickets\Tables\TicketsTable.php
+- \app/Filament\Resources\Tickets\TicketResource.php
+- \app/Filament\Resources\Timesheets\Pages\CreateTimesheet.php
+- \app/Filament\Resources\Timesheets\Pages\EditTimesheet.php
+- \app/Filament\Resources\Timesheets\Pages\ListTimesheets.php
+- \app/Filament\Resources\Timesheets\Schemas\TimesheetForm.php
+- \app/Filament\Resources\Timesheets\Tables\TimesheetsTable.php
+- \app/Filament\Resources\Timesheets\TimesheetResource.php
 - \app/Filament\Resources\Users\Pages\CreateUser.php
 - \app/Filament\Resources\Users\Pages\EditUser.php
 - \app/Filament\Resources\Users\Pages\ListUsers.php
@@ -303,10 +800,454 @@ Filament:
 Blade Views:
 - \resources/views/filament\pages
   - \resources/views/filament\pages\manage-customer-stages.blade.php
+  - \resources/views/filament\pages\settings.blade.php
   - \resources/views/filament\pages\task-calendar.blade.php
 - \resources/views/filament\pages\manage-customer-stages.blade.php
+- \resources/views/filament\pages\settings.blade.php
 - \resources/views/filament\pages\task-calendar.blade.php
 
+Translations:
+- \lang\en
+  - \lang\en\dashboard.php
+- \lang\en copy
+  - \lang\en copy\dashboard.php
+- \lang\vendor
+  - \lang\vendor\filament-shield
+    - \lang\vendor\filament-shield\ar
+      - \lang\vendor\filament-shield\ar\filament-shield.php
+    - \lang\vendor\filament-shield\ckb
+      - \lang\vendor\filament-shield\ckb\filament-shield.php
+    - \lang\vendor\filament-shield\cs
+      - \lang\vendor\filament-shield\cs\filament-shield.php
+    - \lang\vendor\filament-shield\de
+      - \lang\vendor\filament-shield\de\filament-shield.php
+    - \lang\vendor\filament-shield\en
+      - \lang\vendor\filament-shield\en\filament-shield.php
+    - \lang\vendor\filament-shield\es
+      - \lang\vendor\filament-shield\es\filament-shield.php
+    - \lang\vendor\filament-shield\fa
+      - \lang\vendor\filament-shield\fa\filament-shield.php
+    - \lang\vendor\filament-shield\fr
+      - \lang\vendor\filament-shield\fr\filament-shield.php
+    - \lang\vendor\filament-shield\hu
+      - \lang\vendor\filament-shield\hu\filament-shield.php
+    - \lang\vendor\filament-shield\hy
+      - \lang\vendor\filament-shield\hy\filament-shield.php
+    - \lang\vendor\filament-shield\id
+      - \lang\vendor\filament-shield\id\filament-shield.php
+    - \lang\vendor\filament-shield\it
+      - \lang\vendor\filament-shield\it\filament-shield.php
+    - \lang\vendor\filament-shield\ja
+      - \lang\vendor\filament-shield\ja\filament-shield.php
+    - \lang\vendor\filament-shield\ka
+      - \lang\vendor\filament-shield\ka\filament-shield.php
+    - \lang\vendor\filament-shield\km
+      - \lang\vendor\filament-shield\km\filament-shield.php
+    - \lang\vendor\filament-shield\ko
+      - \lang\vendor\filament-shield\ko\filament-shield.php
+    - \lang\vendor\filament-shield\ku
+      - \lang\vendor\filament-shield\ku\filament-shield.php
+    - \lang\vendor\filament-shield\lv
+      - \lang\vendor\filament-shield\lv\filament-shield.php
+    - \lang\vendor\filament-shield\nl
+      - \lang\vendor\filament-shield\nl\filament-shield.php
+    - \lang\vendor\filament-shield\pl
+      - \lang\vendor\filament-shield\pl\filament-shield.php
+    - \lang\vendor\filament-shield\pt_BR
+      - \lang\vendor\filament-shield\pt_BR\filament-shield.php
+    - \lang\vendor\filament-shield\pt_PT
+      - \lang\vendor\filament-shield\pt_PT\filament-shield.php
+    - \lang\vendor\filament-shield\ro
+      - \lang\vendor\filament-shield\ro\filament-shield.php
+    - \lang\vendor\filament-shield\ru
+      - \lang\vendor\filament-shield\ru\filament-shield.php
+    - \lang\vendor\filament-shield\sk
+      - \lang\vendor\filament-shield\sk\filament-shield.php
+    - \lang\vendor\filament-shield\sq
+      - \lang\vendor\filament-shield\sq\filament-shield.php
+    - \lang\vendor\filament-shield\tr
+      - \lang\vendor\filament-shield\tr\filament-shield.php
+    - \lang\vendor\filament-shield\uk
+      - \lang\vendor\filament-shield\uk\filament-shield.php
+    - \lang\vendor\filament-shield\vi
+      - \lang\vendor\filament-shield\vi\filament-shield.php
+    - \lang\vendor\filament-shield\zh_CN
+      - \lang\vendor\filament-shield\zh_CN\filament-shield.php
+    - \lang\vendor\filament-shield\zh_TW
+      - \lang\vendor\filament-shield\zh_TW\filament-shield.php
+    - \lang\vendor\filament-shield\ar\filament-shield.php
+    - \lang\vendor\filament-shield\ckb\filament-shield.php
+    - \lang\vendor\filament-shield\cs\filament-shield.php
+    - \lang\vendor\filament-shield\de\filament-shield.php
+    - \lang\vendor\filament-shield\en\filament-shield.php
+    - \lang\vendor\filament-shield\es\filament-shield.php
+    - \lang\vendor\filament-shield\fa\filament-shield.php
+    - \lang\vendor\filament-shield\fr\filament-shield.php
+    - \lang\vendor\filament-shield\hu\filament-shield.php
+    - \lang\vendor\filament-shield\hy\filament-shield.php
+    - \lang\vendor\filament-shield\id\filament-shield.php
+    - \lang\vendor\filament-shield\it\filament-shield.php
+    - \lang\vendor\filament-shield\ja\filament-shield.php
+    - \lang\vendor\filament-shield\ka\filament-shield.php
+    - \lang\vendor\filament-shield\km\filament-shield.php
+    - \lang\vendor\filament-shield\ko\filament-shield.php
+    - \lang\vendor\filament-shield\ku\filament-shield.php
+    - \lang\vendor\filament-shield\lv\filament-shield.php
+    - \lang\vendor\filament-shield\nl\filament-shield.php
+    - \lang\vendor\filament-shield\pl\filament-shield.php
+    - \lang\vendor\filament-shield\pt_BR\filament-shield.php
+    - \lang\vendor\filament-shield\pt_PT\filament-shield.php
+    - \lang\vendor\filament-shield\ro\filament-shield.php
+    - \lang\vendor\filament-shield\ru\filament-shield.php
+    - \lang\vendor\filament-shield\sk\filament-shield.php
+    - \lang\vendor\filament-shield\sq\filament-shield.php
+    - \lang\vendor\filament-shield\tr\filament-shield.php
+    - \lang\vendor\filament-shield\uk\filament-shield.php
+    - \lang\vendor\filament-shield\vi\filament-shield.php
+    - \lang\vendor\filament-shield\zh_CN\filament-shield.php
+    - \lang\vendor\filament-shield\zh_TW\filament-shield.php
+  - \lang\vendor\invoices
+    - \lang\vendor\invoices\cs
+      - \lang\vendor\invoices\cs\invoice.php
+    - \lang\vendor\invoices\de
+      - \lang\vendor\invoices\de\invoice.php
+    - \lang\vendor\invoices\en
+      - \lang\vendor\invoices\en\invoice.php
+    - \lang\vendor\invoices\es
+      - \lang\vendor\invoices\es\invoice.php
+    - \lang\vendor\invoices\fr
+      - \lang\vendor\invoices\fr\invoice.php
+    - \lang\vendor\invoices\nl
+      - \lang\vendor\invoices\nl\invoice.php
+    - \lang\vendor\invoices\ro
+      - \lang\vendor\invoices\ro\invoice.php
+    - \lang\vendor\invoices\cs\invoice.php
+    - \lang\vendor\invoices\de\invoice.php
+    - \lang\vendor\invoices\en\invoice.php
+    - \lang\vendor\invoices\es\invoice.php
+    - \lang\vendor\invoices\fr\invoice.php
+    - \lang\vendor\invoices\nl\invoice.php
+    - \lang\vendor\invoices\ro\invoice.php
+  - \lang\vendor\lara-zeus
+    - \lang\vendor\lara-zeus\spatie-translatable-translations
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ar
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ar\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\az
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\az\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\bn
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\bn\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ca
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ca\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ckb
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ckb\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\da
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\da\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\de
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\de\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\en
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\en\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\es
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\es\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\eu
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\eu\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\fa
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\fa\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\fi
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\fi\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\fr
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\fr\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\he
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\he\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\hr
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\hr\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\hu
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\hu\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\hy
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\hy\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\id
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\id\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\it
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\it\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ja
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ja\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\km
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\km\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ku
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ku\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\lt
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\lt\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ms
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ms\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\my
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\my\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\nl
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\nl\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\no
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\no\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\np
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\np\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_BR
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_BR\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_PT
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_PT\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ro
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ro\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ru
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\ru\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\sk
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\sk\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\sv
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\sv\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\tr
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\tr\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\uk
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\uk\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\uz
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\uz\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\vi
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\vi\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_CN
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_CN\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_TW
+        - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_TW\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ar\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\az\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\bn\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ca\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ckb\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\da\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\de\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\en\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\es\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\eu\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\fa\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\fi\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\fr\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\he\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\hr\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\hu\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\hy\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\id\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\it\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ja\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\km\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ku\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\lt\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ms\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\my\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\nl\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\no\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\np\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_BR\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_PT\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ro\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\ru\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\sk\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\sv\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\tr\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\uk\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\uz\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\vi\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_CN\actions.php
+      - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_TW\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ar\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\az\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\bn\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ca\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ckb\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\da\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\de\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\en\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\es\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\eu\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\fa\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\fi\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\fr\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\he\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\hr\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\hu\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\hy\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\id\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\it\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ja\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\km\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ku\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\lt\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ms\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\my\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\nl\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\no\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\np\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_BR\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_PT\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ro\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\ru\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\sk\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\sv\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\tr\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\uk\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\uz\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\vi\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_CN\actions.php
+    - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_TW\actions.php
+  - \lang\vendor\filament-shield\ar\filament-shield.php
+  - \lang\vendor\filament-shield\ckb\filament-shield.php
+  - \lang\vendor\filament-shield\cs\filament-shield.php
+  - \lang\vendor\filament-shield\de\filament-shield.php
+  - \lang\vendor\filament-shield\en\filament-shield.php
+  - \lang\vendor\filament-shield\es\filament-shield.php
+  - \lang\vendor\filament-shield\fa\filament-shield.php
+  - \lang\vendor\filament-shield\fr\filament-shield.php
+  - \lang\vendor\filament-shield\hu\filament-shield.php
+  - \lang\vendor\filament-shield\hy\filament-shield.php
+  - \lang\vendor\filament-shield\id\filament-shield.php
+  - \lang\vendor\filament-shield\it\filament-shield.php
+  - \lang\vendor\filament-shield\ja\filament-shield.php
+  - \lang\vendor\filament-shield\ka\filament-shield.php
+  - \lang\vendor\filament-shield\km\filament-shield.php
+  - \lang\vendor\filament-shield\ko\filament-shield.php
+  - \lang\vendor\filament-shield\ku\filament-shield.php
+  - \lang\vendor\filament-shield\lv\filament-shield.php
+  - \lang\vendor\filament-shield\nl\filament-shield.php
+  - \lang\vendor\filament-shield\pl\filament-shield.php
+  - \lang\vendor\filament-shield\pt_BR\filament-shield.php
+  - \lang\vendor\filament-shield\pt_PT\filament-shield.php
+  - \lang\vendor\filament-shield\ro\filament-shield.php
+  - \lang\vendor\filament-shield\ru\filament-shield.php
+  - \lang\vendor\filament-shield\sk\filament-shield.php
+  - \lang\vendor\filament-shield\sq\filament-shield.php
+  - \lang\vendor\filament-shield\tr\filament-shield.php
+  - \lang\vendor\filament-shield\uk\filament-shield.php
+  - \lang\vendor\filament-shield\vi\filament-shield.php
+  - \lang\vendor\filament-shield\zh_CN\filament-shield.php
+  - \lang\vendor\filament-shield\zh_TW\filament-shield.php
+  - \lang\vendor\invoices\cs\invoice.php
+  - \lang\vendor\invoices\de\invoice.php
+  - \lang\vendor\invoices\en\invoice.php
+  - \lang\vendor\invoices\es\invoice.php
+  - \lang\vendor\invoices\fr\invoice.php
+  - \lang\vendor\invoices\nl\invoice.php
+  - \lang\vendor\invoices\ro\invoice.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ar\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\az\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\bn\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ca\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ckb\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\da\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\de\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\en\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\es\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\eu\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\fa\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\fi\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\fr\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\he\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\hr\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\hu\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\hy\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\id\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\it\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ja\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\km\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ku\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\lt\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ms\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\my\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\nl\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\no\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\np\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_BR\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\pt_PT\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ro\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\ru\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\sk\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\sv\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\tr\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\uk\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\uz\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\vi\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_CN\actions.php
+  - \lang\vendor\lara-zeus\spatie-translatable-translations\zh_TW\actions.php
+- \lang\en copy\dashboard.php
+- \lang\en\dashboard.php
+- \lang\vendor\filament-shield\ar\filament-shield.php
+- \lang\vendor\filament-shield\ckb\filament-shield.php
+- \lang\vendor\filament-shield\cs\filament-shield.php
+- \lang\vendor\filament-shield\de\filament-shield.php
+- \lang\vendor\filament-shield\en\filament-shield.php
+- \lang\vendor\filament-shield\es\filament-shield.php
+- \lang\vendor\filament-shield\fa\filament-shield.php
+- \lang\vendor\filament-shield\fr\filament-shield.php
+- \lang\vendor\filament-shield\hu\filament-shield.php
+- \lang\vendor\filament-shield\hy\filament-shield.php
+- \lang\vendor\filament-shield\id\filament-shield.php
+- \lang\vendor\filament-shield\it\filament-shield.php
+- \lang\vendor\filament-shield\ja\filament-shield.php
+- \lang\vendor\filament-shield\ka\filament-shield.php
+- \lang\vendor\filament-shield\km\filament-shield.php
+- \lang\vendor\filament-shield\ko\filament-shield.php
+- \lang\vendor\filament-shield\ku\filament-shield.php
+- \lang\vendor\filament-shield\lv\filament-shield.php
+- \lang\vendor\filament-shield\nl\filament-shield.php
+- \lang\vendor\filament-shield\pl\filament-shield.php
+- \lang\vendor\filament-shield\pt_BR\filament-shield.php
+- \lang\vendor\filament-shield\pt_PT\filament-shield.php
+- \lang\vendor\filament-shield\ro\filament-shield.php
+- \lang\vendor\filament-shield\ru\filament-shield.php
+- \lang\vendor\filament-shield\sk\filament-shield.php
+- \lang\vendor\filament-shield\sq\filament-shield.php
+- \lang\vendor\filament-shield\tr\filament-shield.php
+- \lang\vendor\filament-shield\uk\filament-shield.php
+- \lang\vendor\filament-shield\vi\filament-shield.php
+- \lang\vendor\filament-shield\zh_CN\filament-shield.php
+- \lang\vendor\filament-shield\zh_TW\filament-shield.php
+- \lang\vendor\invoices\cs\invoice.php
+- \lang\vendor\invoices\de\invoice.php
+- \lang\vendor\invoices\en\invoice.php
+- \lang\vendor\invoices\es\invoice.php
+- \lang\vendor\invoices\fr\invoice.php
+- \lang\vendor\invoices\nl\invoice.php
+- \lang\vendor\invoices\ro\invoice.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ar\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\az\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\bn\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ca\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ckb\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\da\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\de\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\en\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\es\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\eu\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\fa\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\fi\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\fr\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\he\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\hr\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\hu\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\hy\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\id\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\it\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ja\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\km\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ku\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\lt\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ms\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\my\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\nl\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\no\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\np\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\pt_BR\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\pt_PT\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ro\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\ru\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\sk\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\sv\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\tr\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\uk\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\uz\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\vi\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\zh_CN\actions.php
+- \lang\vendor\lara-zeus\spatie-translatable-translations\zh_TW\actions.php
 
 Panel Provider:
 - \app/Providers/Filament\DashboardPanelProvider.php
